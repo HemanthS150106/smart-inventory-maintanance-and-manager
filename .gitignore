@@ -1,0 +1,7 @@
+data/
+forecasting_env/
+*.ipynb
+*.csv
+predictions*
+forecast*
+order_recommendations*
