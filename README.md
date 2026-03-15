@@ -63,7 +63,7 @@ Streamlit Dashboard UI
 smart-warehouse/
 │
 ├── 📓 COLAB NOTEBOOK
-│     smart_warehouse_colab.ipynb     ← Run this in Google Colab
+│     final_model.ipynb     ← Run this in Google Colab
 │
 ├── 🖥️  STREAMLIT UI
 │     app.py                          ← Run this locally in VS Code
@@ -111,7 +111,7 @@ My Drive/
 
 1. Go to https://colab.research.google.com
 2. Click **File → Upload notebook**
-3. Upload `smart_warehouse_colab.ipynb`
+3. Upload `final_model.ipynb`
 4. Make sure runtime is set to: **Runtime → Change runtime type → Python 3**
 
 > ⚠️ Do NOT enable GPU — the pipeline runs on CPU and GPU is not needed.
