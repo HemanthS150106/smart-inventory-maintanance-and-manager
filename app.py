@@ -5,6 +5,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import os
+import re
+from xml.sax.saxutils import escape
 
 # ── Page config ───────────────────────────────────────────────────
 st.set_page_config(
@@ -160,6 +162,100 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# ── Slot / grid helpers ───────────────────────────────────────────
+def parse_slot_query(q):
+    """Accepts A1, a01, A01 → row letter and column number (matches CSV row/col)."""
+    q = (q or "").strip().upper()
+    m = re.match(r"^([A-Z])(\d+)$", q)
+    if not m:
+        return None, None
+    return m.group(1), int(m.group(2))
+
+
+def build_warehouse_svg_blueprint(slots_df, rows_list, cols_list):
+    """Inline SVG: zone-colored grid + one dot per SKU (velocity colour), tooltips."""
+    W, H = 1100, 620
+    ml, mt, mr, mb = 72, 48, 24, 36
+    gw, gh = W - ml - mr, H - mt - mb
+    nr, nc = len(rows_list), len(cols_list)
+    if nr == 0 or nc == 0:
+        return '<p style="color:#8b8fa8;">No grid dimensions in slot data.</p>'
+    cw, ch = gw / nc, gh / nr
+    zone_fill = {"HOT": "#3d2528", "WARM": "#3d3525", "COLD": "#1e2438"}
+    vel_fill = {"A": "#51cf66", "B": "#ffd43b", "C": "#66d9e8", "D": "#cc5de8"}
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
+        f'preserveAspectRatio="xMidYMid meet" style="max-width:100%;height:auto;background:#0f1117;">',
+        f'<text x="{W/2}" y="30" text-anchor="middle" fill="#e8eaf0" '
+        f'font-family="Segoe UI,sans-serif" font-size="15" font-weight="600">'
+        f'Warehouse blueprint — zones &amp; product dots (by velocity)</text>',
+        f'<text x="{ml}" y="{mt - 8}" fill="#51cf66" font-family="Consolas,monospace" '
+        f'font-size="11">▶ ENTRANCE · row A, column 1</text>',
+    ]
+
+    for ri, row_label in enumerate(rows_list):
+        for ci, col_num in enumerate(cols_list):
+            sub = slots_df[
+                (slots_df["row"] == row_label)
+                & (slots_df["col"].astype(int) == int(col_num))
+            ]
+            x = ml + ci * cw
+            y = mt + ri * ch
+            zone = str(sub["zone"].iloc[0]) if len(sub) else "COLD"
+            fill = zone_fill.get(zone, "#2a2d3a")
+            parts.append(
+                f'<rect x="{x:.1f}" y="{y:.1f}" width="{cw-1.5:.1f}" height="{ch-1.5:.1f}" '
+                f'fill="{fill}" stroke="#3d4152" stroke-width="1" rx="4"/>'
+            )
+            sid = f"{row_label}{int(col_num):02d}"
+            parts.append(
+                f'<text x="{x + cw/2:.1f}" y="{y + 15:.1f}" text-anchor="middle" '
+                f'fill="#9aa3b8" font-size="9" font-family="Consolas,monospace">{sid}</text>'
+            )
+            if len(sub) == 0:
+                continue
+            if "position_in_slot" in sub.columns:
+                sub = sub.sort_values("position_in_slot", kind="mergesort")
+            n = len(sub)
+            n_show = min(n, 42)
+            inner_w = cw - 14
+            inner_h = ch - 28
+            ncols = min(7, max(1, int(np.ceil(np.sqrt(n_show)))))
+            nrows = int(np.ceil(n_show / ncols))
+            dot_r = max(2.0, min(4.5, 0.35 * min(inner_w / ncols, inner_h / max(nrows, 1))))
+            for j, (_, sku) in enumerate(sub.iterrows()):
+                if j >= n_show:
+                    break
+                rr = j // ncols
+                cc = j % ncols
+                px = x + 7 + (cc + 0.5) * (inner_w / max(ncols, 1))
+                py = y + 22 + (rr + 0.5) * (inner_h / max(nrows, 1))
+                vel = str(sku.get("velocity", "D"))[:1]
+                colour = vel_fill.get(vel, "#adb5bd")
+                tt = escape(
+                    f"{sku.get('item_id','')} | {sid} | vel {sku.get('velocity','')} | "
+                    f"demand {float(sku.get('predicted_weekly_demand', 0)):.1f}/wk"
+                )
+                parts.append(
+                    f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{dot_r:.1f}" fill="{colour}" '
+                    f'stroke="#0f1117" stroke-width="0.4"><title>{tt}</title></circle>'
+                )
+            if n > n_show:
+                parts.append(
+                    f'<text x="{x + cw - 6:.1f}" y="{y + ch - 5:.1f}" text-anchor="end" '
+                    f'fill="#8b8fa8" font-size="8">+{n - n_show}</text>'
+                )
+
+    parts.append(
+        f'<text x="{W/2}" y="{H - 10:.0f}" text-anchor="middle" fill="#6b7280" '
+        f'font-size="10" font-family="Segoe UI,sans-serif">'
+        f'Dots: A=green · B=amber · C=cyan · D=violet · hover/tap a dot for SKU detail</text>'
+    )
+    parts.append("</svg>")
+    return "\n".join(parts)
+
+
 # ── Data loading ──────────────────────────────────────────────────
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -170,6 +266,14 @@ def load_data():
     slots        = pd.read_csv(os.path.join(DATA_DIR, 'slot_assignments.csv'))
     carts        = pd.read_csv(os.path.join(DATA_DIR, 'cart_assignments.csv'))
     routes       = pd.read_csv(os.path.join(DATA_DIR, 'optimized_routes.csv'))
+    if "distance_score" not in slots.columns and "distance_from_entrance" in slots.columns:
+        slots = slots.copy()
+        slots["distance_score"] = slots["distance_from_entrance"]
+    # Some notebook runs export `wape_weekly` instead of `mape_weekly`.
+    # The UI expects `mape_weekly`, so provide a compatibility alias.
+    if "mape_weekly" not in predictions.columns and "wape_weekly" in predictions.columns:
+        predictions = predictions.copy()
+        predictions["mape_weekly"] = predictions["wape_weekly"]
     return predictions, decisions, slots, carts, routes
 
 try:
@@ -245,6 +349,9 @@ if not data_loaded:
     ```
     """)
     st.stop()
+
+WAREHOUSE_ROWS = sorted(slots["row"].unique())
+WAREHOUSE_COLS = sorted(slots["col"].astype(int).unique())
 
 # ════════════════════════════════════════════════════════════════
 # PAGE 1 — OVERVIEW
@@ -636,141 +743,149 @@ elif page == "🏭 Inventory Decisions":
 elif page == "📍 Slot Map":
 
     st.markdown("## 📍 Warehouse Slot Map")
+    nr, nc = len(WAREHOUSE_ROWS), len(WAREHOUSE_COLS)
     st.markdown(
-        "<p style='color:#8b8fa8;font-size:0.88rem;margin-top:-8px;'>"
-        "Velocity-based slot allocation · 12 rows × 10 columns · "
-        "Entrance at top-left (A1)</p>",
+        f"<p style='color:#8b8fa8;font-size:0.88rem;margin-top:-8px;'>"
+        f"Velocity-based allocation · grid <b>{nr}×{nc}</b> (rows × columns) · "
+        f"slot IDs like <code>A01</code> · entrance at row A, column 1</p>",
         unsafe_allow_html=True
     )
 
-    ROWS_LIST = ['A','B','C','D','E','F','G','H','I','J','K','L']
-    COLS_LIST = list(range(1, 11))
+    st.markdown("### Blueprint (SVG)")
+    st.markdown(
+        "<p style='color:#8b8fa8;font-size:0.82rem;margin-top:-10px;'>"
+        "Each cell is a slot; coloured by zone (HOT / WARM / COLD). "
+        "Each dot is one SKU at its shelf position; colour = velocity class.</p>",
+        unsafe_allow_html=True,
+    )
+    svg_html = build_warehouse_svg_blueprint(slots, WAREHOUSE_ROWS, WAREHOUSE_COLS)
+    st.markdown(
+        f"<div style='border:1px solid #2a2d3a;border-radius:12px;overflow:auto;"
+        f"background:#0f1117;padding:8px;'>{svg_html}</div>",
+        unsafe_allow_html=True,
+    )
 
-    # ── Heatmap ───────────────────────────────────────────────────
     col1, col2 = st.columns([2, 1])
 
     with col1:
-        st.markdown("### Demand Heatmap")
+        st.markdown("### Demand heatmap")
         view_opt = st.radio(
             "Colour by",
             ["Total weekly demand", "Velocity zone",
              "Number of SKUs per slot"],
-            horizontal=True
+            horizontal=True,
         )
 
-        demand_grid = np.zeros((len(ROWS_LIST), len(COLS_LIST)))
-        zone_grid   = np.zeros((len(ROWS_LIST), len(COLS_LIST)))
-        count_grid  = np.zeros((len(ROWS_LIST), len(COLS_LIST)))
+        demand_grid = np.zeros((nr, nc))
+        zone_grid   = np.zeros((nr, nc))
+        count_grid  = np.zeros((nr, nc))
 
-        zone_num = {'HOT': 3, 'WARM': 2, 'COLD': 1}
+        zone_num = {"HOT": 3, "WARM": 2, "COLD": 1}
 
-        for _, row in slots.iterrows():
-            r = ROWS_LIST.index(row['row'])
-            c = row['col'] - 1
-            demand_grid[r][c] += row['predicted_weekly_demand']
-            zone_grid[r][c]    = zone_num.get(row['zone'], 0)
-            count_grid[r][c]  += 1
+        for _, srow in slots.iterrows():
+            try:
+                ri = WAREHOUSE_ROWS.index(srow["row"])
+                ci = WAREHOUSE_COLS.index(int(srow["col"]))
+            except (ValueError, TypeError):
+                continue
+            demand_grid[ri][ci] += srow["predicted_weekly_demand"]
+            zone_grid[ri][ci] = zone_num.get(srow["zone"], 0)
+            count_grid[ri][ci] += 1
 
         if view_opt == "Total weekly demand":
             z_data = demand_grid
-            cmap   = 'YlOrRd'
-            zlabel = 'Weekly demand'
+            cmap = "YlOrRd"
+            zlabel = "Weekly demand"
         elif view_opt == "Velocity zone":
             z_data = zone_grid
-            cmap   = 'RdYlBu'
-            zlabel = 'Zone (3=HOT, 1=COLD)'
+            cmap = "RdYlBu"
+            zlabel = "Zone (3=HOT, 1=COLD)"
         else:
             z_data = count_grid
-            cmap   = 'Blues'
-            zlabel = 'SKU count'
+            cmap = "Blues"
+            zlabel = "SKU count"
 
-        # Hover text
         hover_text = []
-        for r_idx, row_label in enumerate(ROWS_LIST):
+        for row_label in WAREHOUSE_ROWS:
             row_hover = []
-            for c_idx, col_num in enumerate(COLS_LIST):
-                slot_id   = f"{row_label}{col_num}"
-                slot_skus = slots[slots['slot_id'] == slot_id]
-                zone      = slot_skus['zone'].iloc[0] \
-                            if len(slot_skus) > 0 else 'N/A'
-                n_skus    = len(slot_skus)
-                demand    = slot_skus['predicted_weekly_demand'].sum()
+            for col_num in WAREHOUSE_COLS:
+                sid = f"{row_label}{int(col_num):02d}"
+                slot_skus = slots[
+                    (slots["row"] == row_label)
+                    & (slots["col"].astype(int) == int(col_num))
+                ]
+                zone = (
+                    slot_skus["zone"].iloc[0]
+                    if len(slot_skus) > 0
+                    else "N/A"
+                )
+                n_skus = len(slot_skus)
+                demand = slot_skus["predicted_weekly_demand"].sum()
                 row_hover.append(
-                    f"Slot: {slot_id}<br>"
+                    f"Slot: {sid}<br>"
                     f"Zone: {zone}<br>"
                     f"SKUs: {n_skus}<br>"
                     f"Demand: {demand:.0f}/wk"
                 )
             hover_text.append(row_hover)
 
-        fig_heat = go.Figure(go.Heatmap(
-            z=z_data,
-            x=[f'C{c}' for c in COLS_LIST],
-            y=ROWS_LIST,
-            colorscale=cmap,
-            text=hover_text,
-            hoverinfo='text',
-            colorbar=dict(
-                title=zlabel,
-                titlefont=dict(color='#c8cad8'),
-                tickfont=dict(color='#c8cad8'),
-            ),
-        ))
-
-        # Zone boundary lines
-        fig_heat.add_shape(type='line', x0=-0.5, x1=9.5,
-                           y0=0.5, y1=0.5,
-                           line=dict(color='white', width=2, dash='dot'))
-        fig_heat.add_shape(type='line', x0=-0.5, x1=9.5,
-                           y0=5.5, y1=5.5,
-                           line=dict(color='white', width=2, dash='dot'))
-
-        # Entrance annotation
-        fig_heat.add_annotation(
-            x=0, y=-0.7, text='▶ ENTRANCE',
-            showarrow=False,
-            font=dict(color='#51cf66', size=12, family='Space Mono'),
-            xref='x', yref='y'
+        fig_heat = go.Figure(
+            go.Heatmap(
+                z=z_data,
+                x=[f"C{c}" for c in WAREHOUSE_COLS],
+                y=WAREHOUSE_ROWS,
+                colorscale=cmap,
+                text=hover_text,
+                hoverinfo="text",
+                colorbar=dict(
+                    title=zlabel,
+                    titlefont=dict(color="#c8cad8"),
+                    tickfont=dict(color="#c8cad8"),
+                ),
+            )
         )
 
-        # Zone labels
-        for label, y_pos, color in [
-            ('HOT',  0,   '#ff6b6b'),
-            ('WARM', 3,   '#ffa94d'),
-            ('COLD', 8.5, '#74c0fc'),
-        ]:
-            fig_heat.add_annotation(
-                x=10.2, y=y_pos, text=label,
-                showarrow=False, xref='x', yref='y',
-                font=dict(color=color, size=11,
-                          family='Space Mono'),
-            )
+        fig_heat.add_annotation(
+            x=0,
+            y=-0.6,
+            text="▶ ENTRANCE",
+            showarrow=False,
+            font=dict(color="#51cf66", size=12, family="Space Mono"),
+            xref="x",
+            yref="y",
+        )
 
         fig_heat.update_layout(
-            paper_bgcolor='#1a1d27',
-            plot_bgcolor='#1a1d27',
+            paper_bgcolor="#1a1d27",
+            plot_bgcolor="#1a1d27",
             height=460,
-            margin=dict(l=30, r=80, t=20, b=40),
-            xaxis=dict(color='#8b8fa8', side='top'),
-            yaxis=dict(color='#8b8fa8', autorange='reversed'),
-            font=dict(family='DM Sans', color='#c8cad8'),
+            margin=dict(l=30, r=60, t=20, b=40),
+            xaxis=dict(color="#8b8fa8", side="top"),
+            yaxis=dict(color="#8b8fa8", autorange="reversed"),
+            font=dict(family="DM Sans", color="#c8cad8"),
         )
         st.plotly_chart(fig_heat, use_container_width=True)
 
     with col2:
-        st.markdown("### Zone Stats")
+        st.markdown("### Zone stats")
 
         for zone, color, bg in [
-            ('HOT',  '#ff6b6b', '#2d1515'),
-            ('WARM', '#ffa94d', '#2d2215'),
-            ('COLD', '#74c0fc', '#151a2d'),
+            ("HOT", "#ff6b6b", "#2d1515"),
+            ("WARM", "#ffa94d", "#2d2215"),
+            ("COLD", "#74c0fc", "#151a2d"),
         ]:
-            zone_data = slots[slots['zone'] == zone]
-            n_skus    = len(zone_data)
-            avg_dist  = zone_data['distance_score'].mean()
-            tot_dem   = zone_data['predicted_weekly_demand'].sum()
+            zone_data = slots[slots["zone"] == zone]
+            n_skus = len(zone_data)
+            dist_col = (
+                "distance_score"
+                if "distance_score" in zone_data.columns
+                else "distance_from_entrance"
+            )
+            avg_dist = zone_data[dist_col].mean() if dist_col in zone_data.columns else 0.0
+            tot_dem = zone_data["predicted_weekly_demand"].sum()
 
-            st.markdown(f"""
+            st.markdown(
+                f"""
             <div style='background:{bg};border:1px solid {color}33;
                         border-left:3px solid {color};
                         border-radius:8px;padding:12px 16px;
@@ -785,38 +900,51 @@ elif page == "📍 Slot Map":
                     Weekly demand: <b>{tot_dem:,.0f}</b>
                 </div>
             </div>
-            """, unsafe_allow_html=True)
+            """,
+                unsafe_allow_html=True,
+            )
 
-        st.markdown("### Slot Detail")
+        st.markdown("### Slot detail")
         slot_id_input = st.text_input(
-            "Enter slot ID (e.g. A1, B3)",
-            value="A1"
-        ).upper()
+            "Slot ID (e.g. A1, A01, B3)",
+            value="A01",
+        ).strip().upper()
 
-        if slot_id_input:
-            slot_items = slots[slots['slot_id'] == slot_id_input]
+        r_q, c_q = parse_slot_query(slot_id_input)
+        if slot_id_input and r_q is not None:
+            slot_items = slots[
+                (slots["row"] == r_q) & (slots["col"].astype(int) == c_q)
+            ]
+            sid_disp = f"{r_q}{int(c_q):02d}"
             if len(slot_items) > 0:
-                zone = slot_items['zone'].iloc[0]
-                st.markdown(f"""
+                zone = slot_items["zone"].iloc[0]
+                st.markdown(
+                    f"""
                 <div class='info-card'>
-                    <b>Slot {slot_id_input}</b> —
+                    <b>Slot {sid_disp}</b> —
                     {zone} zone<br>
                     {len(slot_items)} SKUs assigned
                 </div>
-                """, unsafe_allow_html=True)
+                """,
+                    unsafe_allow_html=True,
+                )
                 st.dataframe(
-                    slot_items[['item_id','velocity',
-                                'predicted_weekly_demand',
-                                'decision']]
-                    .rename(columns={
-                        'predicted_weekly_demand': 'Demand/wk',
-                    })
-                    .style.format({'Demand/wk': '{:.1f}'}),
+                    slot_items[
+                        ["item_id", "velocity", "predicted_weekly_demand", "decision"]
+                    ]
+                    .rename(
+                        columns={
+                            "predicted_weekly_demand": "Demand/wk",
+                        }
+                    )
+                    .style.format({"Demand/wk": "{:.1f}"}),
                     use_container_width=True,
-                    hide_index=True
+                    hide_index=True,
                 )
             else:
-                st.warning(f"Slot {slot_id_input} not found.")
+                st.warning(f"Slot {sid_disp} not found in data.")
+        elif slot_id_input:
+            st.warning("Use a slot like A1, A01, or B10 (row letter + column number).")
 
 
 # ════════════════════════════════════════════════════════════════
@@ -954,38 +1082,36 @@ elif page == "🛒 Cart & Routes":
                     )
 
     with r2:
-        # Draw warehouse grid with route
-        ROWS_LIST = ['A','B','C','D','E','F','G','H','I','J','K','L']
-        COLS_LIST = list(range(1, 11))
-
+        # Draw warehouse grid with route (same dimensions as slot data)
         cart_items_sel = carts[carts['cart_label'] == selected_cart]
 
         fig_route = go.Figure()
 
-        # Background grid — colour by zone
-        zone_bg = []
-        for r_idx, row_label in enumerate(ROWS_LIST):
-            for c_idx in range(len(COLS_LIST)):
-                zone = ('HOT'  if r_idx < 1 else
-                        'WARM' if r_idx < 6 else 'COLD')
-                zone_bg.append((r_idx, c_idx, zone))
-
         zone_colors = {'HOT': '#2d1515', 'WARM': '#2d2215',
                        'COLD': '#151a2d'}
-        for r_idx, c_idx, zone in zone_bg:
-            fig_route.add_shape(
-                type='rect',
-                x0=c_idx-0.45, x1=c_idx+0.45,
-                y0=r_idx-0.45, y1=r_idx+0.45,
-                fillcolor=zone_colors[zone],
-                line=dict(color='#2a2d3a', width=0.5),
-                layer='below'
-            )
+        for r_idx, row_label in enumerate(WAREHOUSE_ROWS):
+            for c_idx, col_num in enumerate(WAREHOUSE_COLS):
+                sub = slots[
+                    (slots['row'] == row_label)
+                    & (slots['col'].astype(int) == int(col_num))
+                ]
+                zone = str(sub['zone'].iloc[0]) if len(sub) else 'COLD'
+                fig_route.add_shape(
+                    type='rect',
+                    x0=c_idx-0.45, x1=c_idx+0.45,
+                    y0=r_idx-0.45, y1=r_idx+0.45,
+                    fillcolor=zone_colors.get(zone, '#151a2d'),
+                    line=dict(color='#2a2d3a', width=0.5),
+                    layer='below'
+                )
 
         # Cart item slots
         for _, item in cart_items_sel.iterrows():
-            r = ROWS_LIST.index(item['row'])
-            c = item['col'] - 1
+            try:
+                r = WAREHOUSE_ROWS.index(item['row'])
+                c = WAREHOUSE_COLS.index(int(item['col']))
+            except (ValueError, TypeError):
+                continue
             fig_route.add_trace(go.Scatter(
                 x=[c], y=[r],
                 mode='markers',
@@ -1010,9 +1136,9 @@ elif page == "🛒 Cart & Routes":
                         try:
                             row_char = stop[0]
                             col_num  = int(stop[1:])
-                            if row_char in ROWS_LIST:
-                                r = ROWS_LIST.index(row_char)
-                                c = col_num - 1
+                            if row_char in WAREHOUSE_ROWS:
+                                r = WAREHOUSE_ROWS.index(row_char)
+                                c = WAREHOUSE_COLS.index(col_num)
                                 stop_coords.append((c, r))
                         except ValueError:
                             continue
@@ -1048,17 +1174,17 @@ elif page == "🛒 Cart & Routes":
             height=480,
             margin=dict(l=30, r=20, t=20, b=30),
             xaxis=dict(
-                tickvals=list(range(len(COLS_LIST))),
-                ticktext=[f'C{c}' for c in COLS_LIST],
+                tickvals=list(range(len(WAREHOUSE_COLS))),
+                ticktext=[f'C{c}' for c in WAREHOUSE_COLS],
                 color='#8b8fa8', gridcolor='#2a2d3a',
-                range=[-0.6, len(COLS_LIST)-0.4],
+                range=[-0.6, len(WAREHOUSE_COLS)-0.4],
             ),
             yaxis=dict(
-                tickvals=list(range(len(ROWS_LIST))),
-                ticktext=ROWS_LIST,
+                tickvals=list(range(len(WAREHOUSE_ROWS))),
+                ticktext=WAREHOUSE_ROWS,
                 color='#8b8fa8', gridcolor='#2a2d3a',
                 autorange='reversed',
-                range=[-0.6, len(ROWS_LIST)-0.4],
+                range=[-0.6, len(WAREHOUSE_ROWS)-0.4],
             ),
             legend=dict(font=dict(color='#c8cad8'),
                         bgcolor='rgba(0,0,0,0)',
