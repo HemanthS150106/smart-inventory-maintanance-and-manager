@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350 600" width="1350" height="600" style="background:#fff; font-family:sans-serif;">
+<defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+  </defs><rect x="50" y="50" width="250" height="150" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+<rect x="50" y="50" width="250" height="30" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+<text x="175" y="70" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold" >item_meta.json</text>
+<text x="60" y="95" font-size="12" fill="#333">PK: item_id</text>
+<text x="60" y="115" font-size="12" fill="#333">category (String)</text>
+<text x="60" y="135" font-size="12" fill="#333">dept (String)</text>
+<text x="60" y="155" font-size="12" fill="#333">current_stock (Integer)</text>
+<text x="60" y="175" font-size="12" fill="#333">unit_weight_kg (Float)</text>
+<text x="60" y="195" font-size="12" fill="#333">size (String)</text>
+<rect x="400" y="50" width="250" height="170" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+<rect x="400" y="50" width="250" height="30" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+<text x="525" y="70" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold" >slot_registry.json [slots]</text>
+<text x="410" y="95" font-size="12" fill="#333">PK: slot_id</text>
+<text x="410" y="115" font-size="12" fill="#333">zone (String)</text>
+<text x="410" y="135" font-size="12" fill="#333">level (String)</text>
+<text x="410" y="155" font-size="12" fill="#333">occupied (Boolean)</text>
+<text x="410" y="175" font-size="12" fill="#333">FK: item_id (String)</text>
+<text x="410" y="195" font-size="12" fill="#333">weight (Float)</text>
+<text x="410" y="215" font-size="12" fill="#333">demand (String)</text>
+<rect x="750" y="50" width="250" height="110" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+<rect x="750" y="50" width="250" height="30" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+<text x="875" y="70" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold" >orders.json [Array]</text>
+<text x="760" y="95" font-size="12" fill="#333">PK: order_id</text>
+<text x="760" y="115" font-size="12" fill="#333">placed_at (String ISO)</text>
+<text x="760" y="135" font-size="12" fill="#333">status (Ordered|Partial|Complete)</text>
+<text x="760" y="155" font-size="12" fill="#333">items [Array of Object]</text>
+<rect x="1050" y="50" width="250" height="90" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+<rect x="1050" y="50" width="250" height="30" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+<text x="1175" y="70" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold" >orders.json -> items</text>
+<text x="1060" y="95" font-size="12" fill="#333">FK: item_id</text>
+<text x="1060" y="115" font-size="12" fill="#333">qty_ordered (Integer)</text>
+<text x="1060" y="135" font-size="12" fill="#333">arrived (Boolean)</text>
+<rect x="750" y="350" width="250" height="110" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+<rect x="750" y="350" width="250" height="30" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+<text x="875" y="370" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold" >arrivals_history.json [Array]</text>
+<text x="760" y="395" font-size="12" fill="#333">PK: global_arrival_id</text>
+<text x="760" y="415" font-size="12" fill="#333">FK: order_id</text>
+<text x="760" y="435" font-size="12" fill="#333">arrived_at (String ISO)</text>
+<text x="760" y="455" font-size="12" fill="#333">items [Array of Object]</text>
+<rect x="1050" y="350" width="250" height="90" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+<rect x="1050" y="350" width="250" height="30" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+<text x="1175" y="370" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold" >arrivals_history.json -> items</text>
+<text x="1060" y="395" font-size="12" fill="#333">FK: item_id</text>
+<text x="1060" y="415" font-size="12" fill="#333">weight (Float)</text>
+<text x="1060" y="435" font-size="12" fill="#333">qty (Integer)</text>
+<rect x="50" y="350" width="250" height="130" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+<rect x="50" y="350" width="250" height="30" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+<text x="175" y="370" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold" >forecasts_output.csv</text>
+<text x="60" y="395" font-size="12" fill="#333">PK: id (sku_id)</text>
+<text x="60" y="415" font-size="12" fill="#333">lgbm_pred (Float)</text>
+<text x="60" y="435" font-size="12" fill="#333">xgb_pred (Float)</text>
+<text x="60" y="455" font-size="12" fill="#333">route (String)</text>
+<text x="60" y="475" font-size="12" fill="#333">sales (Integer)</text>
+<line x1="300" y1="100" x2="400" y2="100" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="340.0" y="88.0" width="108" height="18" fill="#fff" opacity="0.9"/>
+<text x="350.0" y="100.0" font-size="12" fill="#475569" font-weight="bold">1:N references</text>
+<line x1="1000" y1="100" x2="1050" y2="100" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="1015.0" y="88.0" width="66" height="18" fill="#fff" opacity="0.9"/>
+<text x="1025.0" y="100.0" font-size="12" fill="#475569" font-weight="bold">contains</text>
+<line x1="1000" y1="400" x2="1050" y2="400" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="1015.0" y="388.0" width="66" height="18" fill="#fff" opacity="0.9"/>
+<text x="1025.0" y="400.0" font-size="12" fill="#475569" font-weight="bold">contains</text>
+<line x1="875" y1="140" x2="875" y2="350" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="865.0" y="233.0" width="108" height="18" fill="#fff" opacity="0.9"/>
+<text x="875.0" y="245.0" font-size="12" fill="#475569" font-weight="bold">1:N correlates</text>
+
+</svg>

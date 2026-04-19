@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 550" width="850" height="550" style="background:#fff; font-family:sans-serif;">
+<defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+  </defs><rect x="100" y="100" width="250" height="150" rx="5" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+<text x="225.0" y="125" font-size="16" fill="#0f172a" font-weight="bold" text-anchor="middle">index.html (Dashboard)</text>
+<text x="225.0" y="145" font-size="16" fill="#0f172a"  text-anchor="middle">KPI Cards</text>
+<text x="225.0" y="165" font-size="16" fill="#0f172a"  text-anchor="middle">Alerts Feed</text>
+<text x="225.0" y="185" font-size="16" fill="#0f172a"  text-anchor="middle">Warehouse Snapshot</text>
+<rect x="500" y="50" width="250" height="120" rx="5" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+<text x="625.0" y="75" font-size="16" fill="#0f172a" font-weight="bold" text-anchor="middle">forecast.html</text>
+<text x="625.0" y="95" font-size="16" fill="#0f172a"  text-anchor="middle">Forecast Data Table</text>
+<text x="625.0" y="115" font-size="16" fill="#0f172a"  text-anchor="middle">Cart Actions</text>
+<rect x="500" y="250" width="250" height="120" rx="5" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+<text x="625.0" y="275" font-size="16" fill="#0f172a" font-weight="bold" text-anchor="middle">orders.html</text>
+<text x="625.0" y="295" font-size="16" fill="#0f172a"  text-anchor="middle">Placed Orders UI</text>
+<text x="625.0" y="315" font-size="16" fill="#0f172a"  text-anchor="middle">Mark Arrived Buttons</text>
+<rect x="100" y="350" width="250" height="120" rx="5" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+<text x="225.0" y="375" font-size="16" fill="#0f172a" font-weight="bold" text-anchor="middle">slot_allocation.html</text>
+<text x="225.0" y="395" font-size="16" fill="#0f172a"  text-anchor="middle">Fullscreen SVG Render</text>
+<line x1="350" y1="130" x2="500" y2="110" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="415.0" y="108.0" width="150" height="18" fill="#fff" opacity="0.9"/>
+<text x="425.0" y="120.0" font-size="12" fill="#475569" font-weight="bold">href='forecast.html'</text>
+<line x1="350" y1="170" x2="500" y2="280" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="415.0" y="213.0" width="136" height="18" fill="#fff" opacity="0.9"/>
+<text x="425.0" y="225.0" font-size="12" fill="#475569" font-weight="bold">href='orders.html'</text>
+<line x1="225" y1="250" x2="225" y2="350" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="215.0" y="288.0" width="199" height="18" fill="#fff" opacity="0.9"/>
+<text x="225.0" y="300.0" font-size="12" fill="#475569" font-weight="bold">href='slot_allocation.html'</text>
+<line x1="625" y1="170" x2="625" y2="250" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="615.0" y="198.0" width="122" height="18" fill="#fff" opacity="0.9"/>
+<text x="625.0" y="210.0" font-size="12" fill="#475569" font-weight="bold">View Orders Form</text>
+
+</svg>

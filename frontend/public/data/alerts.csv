@@ -1,0 +1,481 @@
+sku_id,store_id,alert_type,priority,placement_zone,recommendation
+FOODS_2_044_CA_1_validation,CA_1,RESTOCK,3,Zone-A,Order 8 units within 48 hours
+FOODS_2_044_CA_2_validation,CA_2,RESTOCK,4,Zone-A,Order 6 units within 48 hours
+FOODS_2_044_CA_3_validation,CA_3,RESTOCK,4,Zone-A,Order 6 units within 48 hours
+FOODS_2_044_CA_4_validation,CA_4,RESTOCK,4,Zone-A,Order 4 units within 48 hours
+FOODS_2_044_TX_1_validation,TX_1,STOCKOUT,5,Zone-A,URGENT: Order 15 units immediately
+FOODS_2_044_TX_2_validation,TX_2,RESTOCK,4,Zone-A,Order 4 units within 48 hours
+FOODS_2_044_TX_3_validation,TX_3,RESTOCK,3,Zone-A,Order 9 units within 48 hours
+FOODS_2_044_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 17 units within 48 hours
+FOODS_2_044_WI_2_validation,WI_2,RESTOCK,3,Zone-A,Order 19 units within 48 hours
+FOODS_2_044_WI_3_validation,WI_3,RESTOCK,4,Zone-A,Order 7 units within 48 hours
+FOODS_2_059_CA_1_validation,CA_1,RESTOCK,4,Zone-A,Order 5 units within 48 hours
+FOODS_2_059_CA_2_validation,CA_2,RESTOCK,3,Zone-A,Order 12 units within 48 hours
+FOODS_2_059_CA_3_validation,CA_3,RESTOCK,3,Zone-A,Order 36 units within 48 hours
+FOODS_2_059_CA_4_validation,CA_4,RESTOCK,3,Zone-A,Order 11 units within 48 hours
+FOODS_2_059_TX_1_validation,TX_1,RESTOCK,3,Zone-A,Order 17 units within 48 hours
+FOODS_2_059_TX_2_validation,TX_2,RESTOCK,3,Zone-A,Order 17 units within 48 hours
+FOODS_2_059_TX_3_validation,TX_3,RESTOCK,3,Zone-A,Order 14 units within 48 hours
+FOODS_2_059_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 14 units within 48 hours
+FOODS_2_059_WI_2_validation,WI_2,RESTOCK,3,Zone-A,Order 29 units within 48 hours
+FOODS_2_059_WI_3_validation,WI_3,RESTOCK,3,Zone-A,Order 13 units within 48 hours
+FOODS_2_102_CA_1_validation,CA_1,RESTOCK,4,Zone-A,Order 7 units within 48 hours
+FOODS_2_102_CA_2_validation,CA_2,RESTOCK,3,Zone-A,Order 7 units within 48 hours
+FOODS_2_102_CA_3_validation,CA_3,RESTOCK,4,Zone-A,Order 8 units within 48 hours
+FOODS_2_102_CA_4_validation,CA_4,RESTOCK,4,Zone-A,Order 3 units within 48 hours
+FOODS_2_102_TX_1_validation,TX_1,RESTOCK,4,Zone-A,Order 3 units within 48 hours
+FOODS_2_102_TX_2_validation,TX_2,STOCKOUT,5,Zone-A,URGENT: Order 3 units immediately
+FOODS_2_102_TX_3_validation,TX_3,RESTOCK,3,Zone-A,Order 4 units within 48 hours
+FOODS_2_102_WI_1_validation,WI_1,STOCKOUT,5,Zone-A,URGENT: Order 2 units immediately
+FOODS_2_102_WI_2_validation,WI_2,RESTOCK,4,Zone-A,Order 4 units within 48 hours
+FOODS_2_102_WI_3_validation,WI_3,RESTOCK,4,Zone-A,Order 2 units within 48 hours
+FOODS_2_147_CA_1_validation,CA_1,RESTOCK,4,Zone-A,Order 5 units within 48 hours
+FOODS_2_147_CA_2_validation,CA_2,RESTOCK,3,Zone-A,Order 5 units within 48 hours
+FOODS_2_147_CA_3_validation,CA_3,RESTOCK,4,Zone-A,Order 5 units within 48 hours
+FOODS_2_147_CA_4_validation,CA_4,RESTOCK,4,Zone-A,Order 5 units within 48 hours
+FOODS_2_147_TX_1_validation,TX_1,STOCKOUT,5,Zone-A,URGENT: Order 3 units immediately
+FOODS_2_147_TX_2_validation,TX_2,STOCKOUT,5,Zone-A,URGENT: Order 3 units immediately
+FOODS_2_147_TX_3_validation,TX_3,RESTOCK,4,Zone-A,Order 2 units within 48 hours
+FOODS_2_147_WI_1_validation,WI_1,RESTOCK,4,Zone-A,Order 4 units within 48 hours
+FOODS_2_147_WI_2_validation,WI_2,RESTOCK,3,Zone-A,Order 8 units within 48 hours
+FOODS_2_147_WI_3_validation,WI_3,RESTOCK,4,Zone-A,Order 2 units within 48 hours
+FOODS_2_380_CA_1_validation,CA_1,STOCKOUT,5,Zone-A,URGENT: Order 17 units immediately
+FOODS_2_380_CA_2_validation,CA_2,RESTOCK,4,Zone-A,Order 18 units within 48 hours
+FOODS_2_380_CA_3_validation,CA_3,RESTOCK,3,Zone-A,Order 48 units within 48 hours
+FOODS_2_380_CA_4_validation,CA_4,RESTOCK,4,Zone-A,Order 12 units within 48 hours
+FOODS_2_380_TX_1_validation,TX_1,RESTOCK,4,Zone-A,Order 15 units within 48 hours
+FOODS_2_380_TX_2_validation,TX_2,RESTOCK,4,Zone-A,Order 13 units within 48 hours
+FOODS_2_380_TX_3_validation,TX_3,RESTOCK,4,Zone-A,Order 22 units within 48 hours
+FOODS_2_380_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 30 units within 48 hours
+FOODS_2_380_WI_2_validation,WI_2,RESTOCK,3,Zone-A,Order 63 units within 48 hours
+FOODS_2_380_WI_3_validation,WI_3,RESTOCK,3,Zone-A,Order 33 units within 48 hours
+FOODS_3_017_CA_1_validation,CA_1,RESTOCK,4,Zone-A,Order 0 units within 48 hours
+FOODS_3_017_CA_2_validation,CA_2,RESTOCK,4,Zone-A,Order 2 units within 48 hours
+FOODS_3_017_CA_3_validation,CA_3,STOCKOUT,5,Zone-A,URGENT: Order 2 units immediately
+FOODS_3_017_CA_4_validation,CA_4,STOCKOUT,5,Zone-A,URGENT: Order 1 units immediately
+FOODS_3_017_TX_1_validation,TX_1,RESTOCK,4,Zone-A,Order 0 units within 48 hours
+FOODS_3_017_TX_2_validation,TX_2,RESTOCK,4,Zone-A,Order 1 units within 48 hours
+FOODS_3_017_TX_3_validation,TX_3,STOCKOUT,5,Zone-A,URGENT: Order 1 units immediately
+FOODS_3_017_WI_1_validation,WI_1,RESTOCK,4,Zone-A,Order 1 units within 48 hours
+FOODS_3_017_WI_2_validation,WI_2,RESTOCK,4,Zone-A,Order 3 units within 48 hours
+FOODS_3_017_WI_3_validation,WI_3,RESTOCK,4,Zone-A,Order 2 units within 48 hours
+FOODS_3_093_CA_1_validation,CA_1,RESTOCK,3,Zone-A,Order 9 units within 48 hours
+FOODS_3_093_CA_2_validation,CA_2,RESTOCK,3,Zone-A,Order 13 units within 48 hours
+FOODS_3_093_CA_3_validation,CA_3,RESTOCK,4,Zone-A,Order 18 units within 48 hours
+FOODS_3_093_CA_4_validation,CA_4,RESTOCK,4,Zone-A,Order 4 units within 48 hours
+FOODS_3_093_TX_1_validation,TX_1,RESTOCK,4,Zone-A,Order 23 units within 48 hours
+FOODS_3_093_TX_2_validation,TX_2,RESTOCK,3,Zone-A,Order 33 units within 48 hours
+FOODS_3_093_TX_3_validation,TX_3,RESTOCK,3,Zone-A,Order 23 units within 48 hours
+FOODS_3_093_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 10 units within 48 hours
+FOODS_3_093_WI_2_validation,WI_2,RESTOCK,3,Zone-A,Order 64 units within 48 hours
+FOODS_3_093_WI_3_validation,WI_3,STOCKOUT,5,Zone-A,URGENT: Order 21 units immediately
+FOODS_3_131_CA_1_validation,CA_1,RESTOCK,4,Zone-A,Order 17 units within 48 hours
+FOODS_3_131_CA_2_validation,CA_2,RESTOCK,4,Zone-A,Order 12 units within 48 hours
+FOODS_3_131_CA_3_validation,CA_3,RESTOCK,3,Zone-A,Order 29 units within 48 hours
+FOODS_3_131_CA_4_validation,CA_4,RESTOCK,4,Zone-A,Order 7 units within 48 hours
+FOODS_3_131_TX_1_validation,TX_1,RESTOCK,4,Zone-A,Order 11 units within 48 hours
+FOODS_3_131_TX_2_validation,TX_2,RESTOCK,4,Zone-A,Order 13 units within 48 hours
+FOODS_3_131_TX_3_validation,TX_3,RESTOCK,3,Zone-A,Order 14 units within 48 hours
+FOODS_3_131_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 29 units within 48 hours
+FOODS_3_131_WI_2_validation,WI_2,RESTOCK,4,Zone-A,Order 16 units within 48 hours
+FOODS_3_131_WI_3_validation,WI_3,RESTOCK,4,Zone-A,Order 17 units within 48 hours
+FOODS_3_142_CA_1_validation,CA_1,RESTOCK,3,Zone-A,Order 21 units within 48 hours
+FOODS_3_142_CA_2_validation,CA_2,RESTOCK,4,Zone-A,Order 26 units within 48 hours
+FOODS_3_142_CA_3_validation,CA_3,RESTOCK,3,Zone-A,Order 31 units within 48 hours
+FOODS_3_142_CA_4_validation,CA_4,RESTOCK,4,Zone-A,Order 5 units within 48 hours
+FOODS_3_142_TX_1_validation,TX_1,STOCKOUT,5,Zone-A,URGENT: Order 2 units immediately
+FOODS_3_142_TX_2_validation,TX_2,RESTOCK,4,Zone-A,Order 4 units within 48 hours
+FOODS_3_142_TX_3_validation,TX_3,RESTOCK,4,Zone-A,Order 2 units within 48 hours
+FOODS_3_142_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 9 units within 48 hours
+FOODS_3_142_WI_2_validation,WI_2,RESTOCK,3,Zone-A,Order 9 units within 48 hours
+FOODS_3_142_WI_3_validation,WI_3,RESTOCK,4,Zone-A,Order 5 units within 48 hours
+FOODS_3_150_CA_1_validation,CA_1,RESTOCK,4,Zone-A,Order 39 units within 48 hours
+FOODS_3_150_CA_2_validation,CA_2,RESTOCK,4,Zone-A,Order 38 units within 48 hours
+FOODS_3_150_CA_3_validation,CA_3,RESTOCK,4,Zone-A,Order 58 units within 48 hours
+FOODS_3_150_CA_4_validation,CA_4,RESTOCK,3,Zone-A,Order 28 units within 48 hours
+FOODS_3_150_TX_1_validation,TX_1,RESTOCK,3,Zone-A,Order 72 units within 48 hours
+FOODS_3_150_TX_2_validation,TX_2,RESTOCK,4,Zone-A,Order 55 units within 48 hours
+FOODS_3_150_TX_3_validation,TX_3,RESTOCK,3,Zone-A,Order 78 units within 48 hours
+FOODS_3_150_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 45 units within 48 hours
+FOODS_3_150_WI_2_validation,WI_2,RESTOCK,3,Zone-A,Order 152 units within 48 hours
+FOODS_3_150_WI_3_validation,WI_3,RESTOCK,4,Zone-A,Order 73 units within 48 hours
+FOODS_3_288_CA_1_validation,CA_1,RESTOCK,3,Zone-A,Order 110 units within 48 hours
+FOODS_3_288_CA_2_validation,CA_2,RESTOCK,3,Zone-A,Order 207 units within 48 hours
+FOODS_3_288_CA_3_validation,CA_3,RESTOCK,3,Zone-A,Order 237 units within 48 hours
+FOODS_3_288_CA_4_validation,CA_4,RESTOCK,3,Zone-A,Order 62 units within 48 hours
+FOODS_3_288_TX_1_validation,TX_1,RESTOCK,3,Zone-A,Order 92 units within 48 hours
+FOODS_3_288_TX_2_validation,TX_2,RESTOCK,4,Zone-A,Order 57 units within 48 hours
+FOODS_3_288_TX_3_validation,TX_3,RESTOCK,3,Zone-A,Order 40 units within 48 hours
+FOODS_3_288_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 57 units within 48 hours
+FOODS_3_288_WI_2_validation,WI_2,RESTOCK,3,Zone-A,Order 75 units within 48 hours
+FOODS_3_288_WI_3_validation,WI_3,RESTOCK,3,Zone-A,Order 45 units within 48 hours
+FOODS_3_293_CA_1_validation,CA_1,STOCKOUT,5,Zone-A,URGENT: Order 2 units immediately
+FOODS_3_293_CA_2_validation,CA_2,STOCKOUT,5,Zone-A,URGENT: Order 3 units immediately
+FOODS_3_293_CA_3_validation,CA_3,STOCKOUT,5,Zone-A,URGENT: Order 6 units immediately
+FOODS_3_293_CA_4_validation,CA_4,STOCKOUT,5,Zone-A,URGENT: Order 2 units immediately
+FOODS_3_293_TX_1_validation,TX_1,STOCKOUT,5,Zone-A,URGENT: Order 1 units immediately
+FOODS_3_293_TX_2_validation,TX_2,STOCKOUT,5,Zone-A,URGENT: Order 4 units immediately
+FOODS_3_293_TX_3_validation,TX_3,STOCKOUT,5,Zone-A,URGENT: Order 3 units immediately
+FOODS_3_293_WI_1_validation,WI_1,STOCKOUT,5,Zone-A,URGENT: Order 4 units immediately
+FOODS_3_293_WI_2_validation,WI_2,RESTOCK,4,Zone-A,Order 3 units within 48 hours
+FOODS_3_293_WI_3_validation,WI_3,RESTOCK,4,Zone-A,Order 3 units within 48 hours
+FOODS_3_296_CA_1_validation,CA_1,RESTOCK,4,Zone-A,Order 2 units within 48 hours
+FOODS_3_296_CA_2_validation,CA_2,RESTOCK,3,Zone-A,Order 13 units within 48 hours
+FOODS_3_296_CA_3_validation,CA_3,RESTOCK,4,Zone-A,Order 7 units within 48 hours
+FOODS_3_296_CA_4_validation,CA_4,RESTOCK,4,Zone-A,Order 5 units within 48 hours
+FOODS_3_296_TX_1_validation,TX_1,STOCKOUT,5,Zone-A,URGENT: Order 2 units immediately
+FOODS_3_296_TX_2_validation,TX_2,RESTOCK,4,Zone-A,Order 8 units within 48 hours
+FOODS_3_296_TX_3_validation,TX_3,RESTOCK,4,Zone-A,Order 5 units within 48 hours
+FOODS_3_296_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 10 units within 48 hours
+FOODS_3_296_WI_2_validation,WI_2,RESTOCK,4,Zone-A,Order 12 units within 48 hours
+FOODS_3_296_WI_3_validation,WI_3,RESTOCK,3,Zone-A,Order 6 units within 48 hours
+FOODS_3_420_CA_1_validation,CA_1,RESTOCK,4,Zone-A,Order 3 units within 48 hours
+FOODS_3_420_CA_2_validation,CA_2,STOCKOUT,5,Zone-A,URGENT: Order 4 units immediately
+FOODS_3_420_CA_3_validation,CA_3,STOCKOUT,5,Zone-A,URGENT: Order 5 units immediately
+FOODS_3_420_CA_4_validation,CA_4,STOCKOUT,5,Zone-A,URGENT: Order 4 units immediately
+FOODS_3_420_TX_1_validation,TX_1,STOCKOUT,5,Zone-A,URGENT: Order 2 units immediately
+FOODS_3_420_TX_2_validation,TX_2,STOCKOUT,5,Zone-A,URGENT: Order 8 units immediately
+FOODS_3_420_TX_3_validation,TX_3,STOCKOUT,5,Zone-A,URGENT: Order 4 units immediately
+FOODS_3_420_WI_1_validation,WI_1,RESTOCK,4,Zone-A,Order 2 units within 48 hours
+FOODS_3_420_WI_2_validation,WI_2,RESTOCK,4,Zone-A,Order 2 units within 48 hours
+FOODS_3_420_WI_3_validation,WI_3,STOCKOUT,5,Zone-A,URGENT: Order 3 units immediately
+FOODS_3_525_CA_1_validation,CA_1,RESTOCK,3,Zone-A,Order 20 units within 48 hours
+FOODS_3_525_CA_2_validation,CA_2,RESTOCK,3,Zone-A,Order 17 units within 48 hours
+FOODS_3_525_CA_3_validation,CA_3,RESTOCK,4,Zone-A,Order 16 units within 48 hours
+FOODS_3_525_CA_4_validation,CA_4,RESTOCK,3,Zone-A,Order 7 units within 48 hours
+FOODS_3_525_TX_1_validation,TX_1,RESTOCK,3,Zone-A,Order 16 units within 48 hours
+FOODS_3_525_TX_2_validation,TX_2,RESTOCK,3,Zone-A,Order 15 units within 48 hours
+FOODS_3_525_TX_3_validation,TX_3,RESTOCK,3,Zone-A,Order 14 units within 48 hours
+FOODS_3_525_WI_1_validation,WI_1,RESTOCK,4,Zone-A,Order 9 units within 48 hours
+FOODS_3_525_WI_2_validation,WI_2,RESTOCK,3,Zone-A,Order 18 units within 48 hours
+FOODS_3_525_WI_3_validation,WI_3,RESTOCK,3,Zone-A,Order 35 units within 48 hours
+FOODS_3_764_CA_1_validation,CA_1,RESTOCK,4,Zone-A,Order 47 units within 48 hours
+FOODS_3_764_CA_2_validation,CA_2,RESTOCK,3,Zone-A,Order 44 units within 48 hours
+FOODS_3_764_CA_3_validation,CA_3,RESTOCK,3,Zone-A,Order 91 units within 48 hours
+FOODS_3_764_CA_4_validation,CA_4,RESTOCK,4,Zone-A,Order 14 units within 48 hours
+FOODS_3_764_TX_1_validation,TX_1,RESTOCK,3,Zone-A,Order 41 units within 48 hours
+FOODS_3_764_TX_2_validation,TX_2,RESTOCK,4,Zone-A,Order 42 units within 48 hours
+FOODS_3_764_TX_3_validation,TX_3,STOCKOUT,5,Zone-A,URGENT: Order 31 units immediately
+FOODS_3_764_WI_1_validation,WI_1,RESTOCK,3,Zone-A,Order 42 units within 48 hours
+FOODS_3_764_WI_2_validation,WI_2,STOCKOUT,5,Zone-A,URGENT: Order 35 units immediately
+FOODS_3_764_WI_3_validation,WI_3,RESTOCK,4,Zone-A,Order 40 units within 48 hours
+HOBBIES_1_085_CA_1_validation,CA_1,RESTOCK,3,Zone-C,Order 10 units within 48 hours
+HOBBIES_1_085_CA_2_validation,CA_2,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_1_085_CA_3_validation,CA_3,RESTOCK,3,Zone-C,Order 6 units within 48 hours
+HOBBIES_1_085_CA_4_validation,CA_4,RESTOCK,3,Zone-C,Order 5 units within 48 hours
+HOBBIES_1_085_TX_1_validation,TX_1,RESTOCK,3,Zone-C,Order 3 units within 48 hours
+HOBBIES_1_085_TX_2_validation,TX_2,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_1_085_TX_3_validation,TX_3,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_1_085_WI_1_validation,WI_1,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_1_085_WI_2_validation,WI_2,RESTOCK,3,Zone-C,Order 2 units within 48 hours
+HOBBIES_1_085_WI_3_validation,WI_3,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_1_153_CA_1_validation,CA_1,RESTOCK,3,Zone-C,Order 8 units within 48 hours
+HOBBIES_1_153_CA_2_validation,CA_2,RESTOCK,3,Zone-C,Order 9 units within 48 hours
+HOBBIES_1_153_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 7 units within 48 hours
+HOBBIES_1_153_CA_4_validation,CA_4,RESTOCK,3,Zone-C,Order 7 units within 48 hours
+HOBBIES_1_153_TX_1_validation,TX_1,RESTOCK,3,Zone-C,Order 9 units within 48 hours
+HOBBIES_1_153_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 9 units within 48 hours
+HOBBIES_1_153_TX_3_validation,TX_3,STOCKOUT,5,Zone-C,URGENT: Order 5 units immediately
+HOBBIES_1_153_WI_1_validation,WI_1,RESTOCK,3,Zone-C,Order 19 units within 48 hours
+HOBBIES_1_153_WI_2_validation,WI_2,RESTOCK,3,Zone-C,Order 8 units within 48 hours
+HOBBIES_1_153_WI_3_validation,WI_3,RESTOCK,4,Zone-C,Order 7 units within 48 hours
+HOBBIES_1_158_CA_1_validation,CA_1,RESTOCK,3,Zone-C,Order 23 units within 48 hours
+HOBBIES_1_158_CA_2_validation,CA_2,RESTOCK,3,Zone-C,Order 11 units within 48 hours
+HOBBIES_1_158_CA_3_validation,CA_3,RESTOCK,3,Zone-C,Order 23 units within 48 hours
+HOBBIES_1_158_CA_4_validation,CA_4,RESTOCK,3,Zone-C,Order 5 units within 48 hours
+HOBBIES_1_158_TX_1_validation,TX_1,RESTOCK,3,Zone-C,Order 33 units within 48 hours
+HOBBIES_1_158_TX_2_validation,TX_2,RESTOCK,3,Zone-C,Order 44 units within 48 hours
+HOBBIES_1_158_TX_3_validation,TX_3,RESTOCK,3,Zone-C,Order 130 units within 48 hours
+HOBBIES_1_158_WI_1_validation,WI_1,RESTOCK,3,Zone-C,Order 15 units within 48 hours
+HOBBIES_1_158_WI_2_validation,WI_2,RESTOCK,3,Zone-C,Order 29 units within 48 hours
+HOBBIES_1_158_WI_3_validation,WI_3,RESTOCK,3,Zone-C,Order 13 units within 48 hours
+HOBBIES_1_202_CA_1_validation,CA_1,STOCKOUT,5,Zone-C,URGENT: Order 8 units immediately
+HOBBIES_1_202_CA_2_validation,CA_2,STOCKOUT,5,Zone-C,URGENT: Order 7 units immediately
+HOBBIES_1_202_CA_3_validation,CA_3,STOCKOUT,5,Zone-C,URGENT: Order 7 units immediately
+HOBBIES_1_202_CA_4_validation,CA_4,STOCKOUT,5,Zone-C,URGENT: Order 6 units immediately
+HOBBIES_1_202_TX_1_validation,TX_1,STOCKOUT,5,Zone-C,URGENT: Order 6 units immediately
+HOBBIES_1_202_TX_2_validation,TX_2,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_1_202_TX_3_validation,TX_3,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_1_202_WI_1_validation,WI_1,RESTOCK,4,Zone-C,Order 5 units within 48 hours
+HOBBIES_1_202_WI_2_validation,WI_2,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_1_202_WI_3_validation,WI_3,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_1_230_CA_1_validation,CA_1,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_1_230_CA_2_validation,CA_2,RESTOCK,3,Zone-C,Order 0 units within 48 hours
+HOBBIES_1_230_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_1_230_CA_4_validation,CA_4,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_1_230_TX_1_validation,TX_1,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_1_230_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_230_TX_3_validation,TX_3,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_230_WI_1_validation,WI_1,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_1_230_WI_2_validation,WI_2,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_230_WI_3_validation,WI_3,STOCKOUT,5,Zone-C,URGENT: Order 0 units immediately
+HOBBIES_1_242_CA_1_validation,CA_1,RESTOCK,4,Zone-C,Order 8 units within 48 hours
+HOBBIES_1_242_CA_2_validation,CA_2,RESTOCK,4,Zone-C,Order 6 units within 48 hours
+HOBBIES_1_242_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 11 units within 48 hours
+HOBBIES_1_242_CA_4_validation,CA_4,RESTOCK,4,Zone-C,Order 5 units within 48 hours
+HOBBIES_1_242_TX_1_validation,TX_1,RESTOCK,4,Zone-C,Order 6 units within 48 hours
+HOBBIES_1_242_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 5 units within 48 hours
+HOBBIES_1_242_TX_3_validation,TX_3,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_1_242_WI_1_validation,WI_1,RESTOCK,3,Zone-C,Order 8 units within 48 hours
+HOBBIES_1_242_WI_2_validation,WI_2,STOCKOUT,5,Zone-C,URGENT: Order 2 units immediately
+HOBBIES_1_242_WI_3_validation,WI_3,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_1_255_CA_1_validation,CA_1,STOCKOUT,5,Zone-C,URGENT: Order 6 units immediately
+HOBBIES_1_255_CA_2_validation,CA_2,RESTOCK,4,Zone-C,Order 5 units within 48 hours
+HOBBIES_1_255_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 4 units within 48 hours
+HOBBIES_1_255_CA_4_validation,CA_4,RESTOCK,4,Zone-C,Order 7 units within 48 hours
+HOBBIES_1_255_TX_1_validation,TX_1,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_1_255_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 4 units within 48 hours
+HOBBIES_1_255_TX_3_validation,TX_3,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_1_255_WI_1_validation,WI_1,RESTOCK,4,Zone-C,Order 4 units within 48 hours
+HOBBIES_1_255_WI_2_validation,WI_2,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_1_255_WI_3_validation,WI_3,RESTOCK,3,Zone-C,Order 7 units within 48 hours
+HOBBIES_1_263_CA_1_validation,CA_1,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_263_CA_2_validation,CA_2,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_1_263_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_263_CA_4_validation,CA_4,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_263_TX_1_validation,TX_1,RESTOCK,3,Zone-C,Order 0 units within 48 hours
+HOBBIES_1_263_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_263_TX_3_validation,TX_3,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_263_WI_1_validation,WI_1,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_263_WI_2_validation,WI_2,RESTOCK,3,Zone-C,Order 0 units within 48 hours
+HOBBIES_1_263_WI_3_validation,WI_3,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_1_327_CA_1_validation,CA_1,RESTOCK,4,Zone-C,Order 4 units within 48 hours
+HOBBIES_1_327_CA_2_validation,CA_2,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_1_327_CA_3_validation,CA_3,RESTOCK,3,Zone-C,Order 5 units within 48 hours
+HOBBIES_1_327_CA_4_validation,CA_4,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_1_327_TX_1_validation,TX_1,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_1_327_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_1_327_TX_3_validation,TX_3,RESTOCK,3,Zone-C,Order 5 units within 48 hours
+HOBBIES_1_327_WI_1_validation,WI_1,RESTOCK,3,Zone-C,Order 10 units within 48 hours
+HOBBIES_1_327_WI_2_validation,WI_2,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_1_327_WI_3_validation,WI_3,RESTOCK,3,Zone-C,Order 4 units within 48 hours
+HOBBIES_1_399_CA_1_validation,CA_1,RESTOCK,3,Zone-C,Order 4 units within 48 hours
+HOBBIES_1_399_CA_2_validation,CA_2,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_1_399_CA_3_validation,CA_3,STOCKOUT,5,Zone-C,URGENT: Order 4 units immediately
+HOBBIES_1_399_CA_4_validation,CA_4,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_1_399_TX_1_validation,TX_1,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_1_399_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_1_399_TX_3_validation,TX_3,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_1_399_WI_1_validation,WI_1,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_1_399_WI_2_validation,WI_2,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_1_399_WI_3_validation,WI_3,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_2_028_CA_1_validation,CA_1,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_2_028_CA_2_validation,CA_2,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_2_028_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 4 units within 48 hours
+HOBBIES_2_028_CA_4_validation,CA_4,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_2_028_TX_1_validation,TX_1,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_2_028_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 5 units within 48 hours
+HOBBIES_2_028_TX_3_validation,TX_3,RESTOCK,4,Zone-C,Order 4 units within 48 hours
+HOBBIES_2_028_WI_1_validation,WI_1,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_2_028_WI_2_validation,WI_2,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_2_028_WI_3_validation,WI_3,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_2_071_CA_1_validation,CA_1,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_2_071_CA_2_validation,CA_2,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_2_071_CA_3_validation,CA_3,STOCKOUT,5,Zone-C,URGENT: Order 3 units immediately
+HOBBIES_2_071_CA_4_validation,CA_4,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_2_071_TX_1_validation,TX_1,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_2_071_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_2_071_TX_3_validation,TX_3,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_2_071_WI_1_validation,WI_1,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_071_WI_2_validation,WI_2,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_071_WI_3_validation,WI_3,RESTOCK,3,Zone-C,Order 5 units within 48 hours
+HOBBIES_2_081_CA_1_validation,CA_1,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_2_081_CA_2_validation,CA_2,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_081_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_081_CA_4_validation,CA_4,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_2_081_TX_1_validation,TX_1,STOCKOUT,5,Zone-C,URGENT: Order 2 units immediately
+HOBBIES_2_081_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_2_081_TX_3_validation,TX_3,RESTOCK,3,Zone-C,Order 3 units within 48 hours
+HOBBIES_2_081_WI_1_validation,WI_1,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_2_081_WI_2_validation,WI_2,STOCKOUT,5,Zone-C,URGENT: Order 2 units immediately
+HOBBIES_2_081_WI_3_validation,WI_3,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_108_CA_1_validation,CA_1,STOCKOUT,5,Zone-C,URGENT: Order 0 units immediately
+HOBBIES_2_108_CA_2_validation,CA_2,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_108_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_108_CA_4_validation,CA_4,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_2_108_TX_1_validation,TX_1,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_2_108_TX_2_validation,TX_2,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_2_108_TX_3_validation,TX_3,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_2_108_WI_1_validation,WI_1,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_2_108_WI_2_validation,WI_2,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_2_108_WI_3_validation,WI_3,STOCKOUT,5,Zone-C,URGENT: Order 0 units immediately
+HOBBIES_2_109_CA_1_validation,CA_1,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_2_109_CA_2_validation,CA_2,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_2_109_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_2_109_CA_4_validation,CA_4,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_109_TX_1_validation,TX_1,STOCKOUT,5,Zone-C,URGENT: Order 2 units immediately
+HOBBIES_2_109_TX_2_validation,TX_2,RESTOCK,3,Zone-C,Order 3 units within 48 hours
+HOBBIES_2_109_TX_3_validation,TX_3,RESTOCK,4,Zone-C,Order 2 units within 48 hours
+HOBBIES_2_109_WI_1_validation,WI_1,STOCKOUT,5,Zone-C,URGENT: Order 4 units immediately
+HOBBIES_2_109_WI_2_validation,WI_2,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_2_109_WI_3_validation,WI_3,RESTOCK,3,Zone-C,Order 3 units within 48 hours
+HOBBIES_2_123_CA_1_validation,CA_1,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_2_123_CA_2_validation,CA_2,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_123_CA_3_validation,CA_3,RESTOCK,4,Zone-C,Order 3 units within 48 hours
+HOBBIES_2_123_CA_4_validation,CA_4,STOCKOUT,5,Zone-C,URGENT: Order 1 units immediately
+HOBBIES_2_123_TX_1_validation,TX_1,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_123_TX_2_validation,TX_2,STOCKOUT,5,Zone-C,URGENT: Order 2 units immediately
+HOBBIES_2_123_TX_3_validation,TX_3,RESTOCK,3,Zone-C,Order 3 units within 48 hours
+HOBBIES_2_123_WI_1_validation,WI_1,RESTOCK,4,Zone-C,Order 0 units within 48 hours
+HOBBIES_2_123_WI_2_validation,WI_2,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOBBIES_2_123_WI_3_validation,WI_3,RESTOCK,4,Zone-C,Order 1 units within 48 hours
+HOUSEHOLD_1_033_CA_1_validation,CA_1,RESTOCK,3,Zone-B,Order 8 units within 48 hours
+HOUSEHOLD_1_033_CA_2_validation,CA_2,RESTOCK,3,Zone-B,Order 12 units within 48 hours
+HOUSEHOLD_1_033_CA_3_validation,CA_3,RESTOCK,3,Zone-B,Order 12 units within 48 hours
+HOUSEHOLD_1_033_CA_4_validation,CA_4,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_1_033_TX_1_validation,TX_1,RESTOCK,4,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_1_033_TX_2_validation,TX_2,RESTOCK,3,Zone-B,Order 7 units within 48 hours
+HOUSEHOLD_1_033_TX_3_validation,TX_3,RESTOCK,3,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_1_033_WI_1_validation,WI_1,RESTOCK,3,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_1_033_WI_2_validation,WI_2,RESTOCK,4,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_1_033_WI_3_validation,WI_3,RESTOCK,4,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_1_112_CA_1_validation,CA_1,RESTOCK,3,Zone-B,Order 11 units within 48 hours
+HOUSEHOLD_1_112_CA_2_validation,CA_2,RESTOCK,3,Zone-B,Order 14 units within 48 hours
+HOUSEHOLD_1_112_CA_3_validation,CA_3,RESTOCK,3,Zone-B,Order 19 units within 48 hours
+HOUSEHOLD_1_112_CA_4_validation,CA_4,RESTOCK,3,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_1_112_TX_1_validation,TX_1,RESTOCK,3,Zone-B,Order 11 units within 48 hours
+HOUSEHOLD_1_112_TX_2_validation,TX_2,RESTOCK,4,Zone-B,Order 9 units within 48 hours
+HOUSEHOLD_1_112_TX_3_validation,TX_3,RESTOCK,3,Zone-B,Order 9 units within 48 hours
+HOUSEHOLD_1_112_WI_1_validation,WI_1,RESTOCK,3,Zone-B,Order 8 units within 48 hours
+HOUSEHOLD_1_112_WI_2_validation,WI_2,RESTOCK,3,Zone-B,Order 8 units within 48 hours
+HOUSEHOLD_1_112_WI_3_validation,WI_3,RESTOCK,4,Zone-B,Order 5 units within 48 hours
+HOUSEHOLD_1_163_CA_1_validation,CA_1,STOCKOUT,5,Zone-B,URGENT: Order 3 units immediately
+HOUSEHOLD_1_163_CA_2_validation,CA_2,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_1_163_CA_3_validation,CA_3,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_1_163_CA_4_validation,CA_4,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_1_163_TX_1_validation,TX_1,STOCKOUT,5,Zone-B,URGENT: Order 1 units immediately
+HOUSEHOLD_1_163_TX_2_validation,TX_2,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_1_163_TX_3_validation,TX_3,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_1_163_WI_1_validation,WI_1,STOCKOUT,5,Zone-B,URGENT: Order 1 units immediately
+HOUSEHOLD_1_163_WI_2_validation,WI_2,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_1_163_WI_3_validation,WI_3,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_1_203_CA_1_validation,CA_1,RESTOCK,3,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_1_203_CA_2_validation,CA_2,RESTOCK,4,Zone-B,Order 7 units within 48 hours
+HOUSEHOLD_1_203_CA_3_validation,CA_3,RESTOCK,3,Zone-B,Order 15 units within 48 hours
+HOUSEHOLD_1_203_CA_4_validation,CA_4,RESTOCK,3,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_1_203_TX_1_validation,TX_1,RESTOCK,4,Zone-B,Order 5 units within 48 hours
+HOUSEHOLD_1_203_TX_2_validation,TX_2,STOCKOUT,5,Zone-B,URGENT: Order 5 units immediately
+HOUSEHOLD_1_203_TX_3_validation,TX_3,RESTOCK,3,Zone-B,Order 10 units within 48 hours
+HOUSEHOLD_1_203_WI_1_validation,WI_1,RESTOCK,4,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_1_203_WI_2_validation,WI_2,RESTOCK,3,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_1_203_WI_3_validation,WI_3,RESTOCK,4,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_1_360_CA_1_validation,CA_1,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_1_360_CA_2_validation,CA_2,RESTOCK,3,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_1_360_CA_3_validation,CA_3,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_1_360_CA_4_validation,CA_4,RESTOCK,4,Zone-B,Order 2 units within 48 hours
+HOUSEHOLD_1_360_TX_1_validation,TX_1,RESTOCK,3,Zone-B,Order 2 units within 48 hours
+HOUSEHOLD_1_360_TX_2_validation,TX_2,STOCKOUT,5,Zone-B,URGENT: Order 2 units immediately
+HOUSEHOLD_1_360_TX_3_validation,TX_3,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_1_360_WI_1_validation,WI_1,RESTOCK,4,Zone-B,Order 2 units within 48 hours
+HOUSEHOLD_1_360_WI_2_validation,WI_2,STOCKOUT,5,Zone-B,URGENT: Order 3 units immediately
+HOUSEHOLD_1_360_WI_3_validation,WI_3,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_1_385_CA_1_validation,CA_1,RESTOCK,3,Zone-B,Order 12 units within 48 hours
+HOUSEHOLD_1_385_CA_2_validation,CA_2,RESTOCK,3,Zone-B,Order 17 units within 48 hours
+HOUSEHOLD_1_385_CA_3_validation,CA_3,RESTOCK,4,Zone-B,Order 25 units within 48 hours
+HOUSEHOLD_1_385_CA_4_validation,CA_4,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_1_385_TX_1_validation,TX_1,RESTOCK,3,Zone-B,Order 20 units within 48 hours
+HOUSEHOLD_1_385_TX_2_validation,TX_2,RESTOCK,3,Zone-B,Order 12 units within 48 hours
+HOUSEHOLD_1_385_TX_3_validation,TX_3,RESTOCK,3,Zone-B,Order 21 units within 48 hours
+HOUSEHOLD_1_385_WI_1_validation,WI_1,RESTOCK,3,Zone-B,Order 20 units within 48 hours
+HOUSEHOLD_1_385_WI_2_validation,WI_2,RESTOCK,3,Zone-B,Order 23 units within 48 hours
+HOUSEHOLD_1_385_WI_3_validation,WI_3,RESTOCK,3,Zone-B,Order 24 units within 48 hours
+HOUSEHOLD_1_434_CA_1_validation,CA_1,RESTOCK,3,Zone-B,Order 16 units within 48 hours
+HOUSEHOLD_1_434_CA_2_validation,CA_2,RESTOCK,3,Zone-B,Order 21 units within 48 hours
+HOUSEHOLD_1_434_CA_3_validation,CA_3,RESTOCK,3,Zone-B,Order 38 units within 48 hours
+HOUSEHOLD_1_434_CA_4_validation,CA_4,RESTOCK,3,Zone-B,Order 7 units within 48 hours
+HOUSEHOLD_1_434_TX_1_validation,TX_1,RESTOCK,3,Zone-B,Order 7 units within 48 hours
+HOUSEHOLD_1_434_TX_2_validation,TX_2,RESTOCK,4,Zone-B,Order 8 units within 48 hours
+HOUSEHOLD_1_434_TX_3_validation,TX_3,RESTOCK,3,Zone-B,Order 9 units within 48 hours
+HOUSEHOLD_1_434_WI_1_validation,WI_1,RESTOCK,4,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_1_434_WI_2_validation,WI_2,RESTOCK,4,Zone-B,Order 5 units within 48 hours
+HOUSEHOLD_1_434_WI_3_validation,WI_3,RESTOCK,4,Zone-B,Order 5 units within 48 hours
+HOUSEHOLD_1_458_CA_1_validation,CA_1,RESTOCK,3,Zone-B,Order 10 units within 48 hours
+HOUSEHOLD_1_458_CA_2_validation,CA_2,RESTOCK,3,Zone-B,Order 12 units within 48 hours
+HOUSEHOLD_1_458_CA_3_validation,CA_3,RESTOCK,3,Zone-B,Order 15 units within 48 hours
+HOUSEHOLD_1_458_CA_4_validation,CA_4,RESTOCK,3,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_1_458_TX_1_validation,TX_1,RESTOCK,3,Zone-B,Order 8 units within 48 hours
+HOUSEHOLD_1_458_TX_2_validation,TX_2,RESTOCK,3,Zone-B,Order 12 units within 48 hours
+HOUSEHOLD_1_458_TX_3_validation,TX_3,RESTOCK,3,Zone-B,Order 14 units within 48 hours
+HOUSEHOLD_1_458_WI_1_validation,WI_1,RESTOCK,3,Zone-B,Order 14 units within 48 hours
+HOUSEHOLD_1_458_WI_2_validation,WI_2,RESTOCK,3,Zone-B,Order 11 units within 48 hours
+HOUSEHOLD_1_458_WI_3_validation,WI_3,RESTOCK,3,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_2_029_CA_1_validation,CA_1,STOCKOUT,5,Zone-B,URGENT: Order 2 units immediately
+HOUSEHOLD_2_029_CA_2_validation,CA_2,STOCKOUT,5,Zone-B,URGENT: Order 3 units immediately
+HOUSEHOLD_2_029_CA_3_validation,CA_3,STOCKOUT,5,Zone-B,URGENT: Order 2 units immediately
+HOUSEHOLD_2_029_CA_4_validation,CA_4,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_029_TX_1_validation,TX_1,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_029_TX_2_validation,TX_2,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_029_TX_3_validation,TX_3,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_2_029_WI_1_validation,WI_1,STOCKOUT,5,Zone-B,URGENT: Order 1 units immediately
+HOUSEHOLD_2_029_WI_2_validation,WI_2,RESTOCK,3,Zone-B,Order 2 units within 48 hours
+HOUSEHOLD_2_029_WI_3_validation,WI_3,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_180_CA_1_validation,CA_1,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_2_180_CA_2_validation,CA_2,RESTOCK,4,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_2_180_CA_3_validation,CA_3,STOCKOUT,5,Zone-B,URGENT: Order 2 units immediately
+HOUSEHOLD_2_180_CA_4_validation,CA_4,RESTOCK,4,Zone-B,Order 2 units within 48 hours
+HOUSEHOLD_2_180_TX_1_validation,TX_1,RESTOCK,4,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_2_180_TX_2_validation,TX_2,RESTOCK,3,Zone-B,Order 7 units within 48 hours
+HOUSEHOLD_2_180_TX_3_validation,TX_3,RESTOCK,3,Zone-B,Order 8 units within 48 hours
+HOUSEHOLD_2_180_WI_1_validation,WI_1,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_2_180_WI_2_validation,WI_2,RESTOCK,3,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_2_180_WI_3_validation,WI_3,RESTOCK,3,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_2_235_CA_1_validation,CA_1,STOCKOUT,5,Zone-B,URGENT: Order 2 units immediately
+HOUSEHOLD_2_235_CA_2_validation,CA_2,RESTOCK,4,Zone-B,Order 2 units within 48 hours
+HOUSEHOLD_2_235_CA_3_validation,CA_3,RESTOCK,4,Zone-B,Order 2 units within 48 hours
+HOUSEHOLD_2_235_CA_4_validation,CA_4,STOCKOUT,5,Zone-B,URGENT: Order 1 units immediately
+HOUSEHOLD_2_235_TX_1_validation,TX_1,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_2_235_TX_2_validation,TX_2,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_235_TX_3_validation,TX_3,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_2_235_WI_1_validation,WI_1,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_235_WI_2_validation,WI_2,STOCKOUT,5,Zone-B,URGENT: Order 1 units immediately
+HOUSEHOLD_2_235_WI_3_validation,WI_3,STOCKOUT,5,Zone-B,URGENT: Order 0 units immediately
+HOUSEHOLD_2_259_CA_1_validation,CA_1,RESTOCK,4,Zone-B,Order 2 units within 48 hours
+HOUSEHOLD_2_259_CA_2_validation,CA_2,RESTOCK,3,Zone-B,Order 5 units within 48 hours
+HOUSEHOLD_2_259_CA_3_validation,CA_3,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_2_259_CA_4_validation,CA_4,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_259_TX_1_validation,TX_1,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_259_TX_2_validation,TX_2,STOCKOUT,5,Zone-B,URGENT: Order 3 units immediately
+HOUSEHOLD_2_259_TX_3_validation,TX_3,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_2_259_WI_1_validation,WI_1,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_259_WI_2_validation,WI_2,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_259_WI_3_validation,WI_3,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_2_344_CA_1_validation,CA_1,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_2_344_CA_2_validation,CA_2,STOCKOUT,5,Zone-B,URGENT: Order 2 units immediately
+HOUSEHOLD_2_344_CA_3_validation,CA_3,RESTOCK,3,Zone-B,Order 14 units within 48 hours
+HOUSEHOLD_2_344_CA_4_validation,CA_4,STOCKOUT,5,Zone-B,URGENT: Order 2 units immediately
+HOUSEHOLD_2_344_TX_1_validation,TX_1,RESTOCK,3,Zone-B,Order 7 units within 48 hours
+HOUSEHOLD_2_344_TX_2_validation,TX_2,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_2_344_TX_3_validation,TX_3,STOCKOUT,5,Zone-B,URGENT: Order 4 units immediately
+HOUSEHOLD_2_344_WI_1_validation,WI_1,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_344_WI_2_validation,WI_2,STOCKOUT,5,Zone-B,URGENT: Order 3 units immediately
+HOUSEHOLD_2_344_WI_3_validation,WI_3,RESTOCK,3,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_2_450_CA_1_validation,CA_1,RESTOCK,3,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_2_450_CA_2_validation,CA_2,RESTOCK,4,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_2_450_CA_3_validation,CA_3,RESTOCK,3,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_2_450_CA_4_validation,CA_4,RESTOCK,3,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_2_450_TX_1_validation,TX_1,STOCKOUT,5,Zone-B,URGENT: Order 2 units immediately
+HOUSEHOLD_2_450_TX_2_validation,TX_2,RESTOCK,3,Zone-B,Order 4 units within 48 hours
+HOUSEHOLD_2_450_TX_3_validation,TX_3,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_450_WI_1_validation,WI_1,RESTOCK,3,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_2_450_WI_2_validation,WI_2,RESTOCK,3,Zone-B,Order 3 units within 48 hours
+HOUSEHOLD_2_450_WI_3_validation,WI_3,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_462_CA_1_validation,CA_1,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_462_CA_2_validation,CA_2,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_462_CA_3_validation,CA_3,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_2_462_CA_4_validation,CA_4,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_2_462_TX_1_validation,TX_1,STOCKOUT,5,Zone-B,URGENT: Order 0 units immediately
+HOUSEHOLD_2_462_TX_2_validation,TX_2,RESTOCK,4,Zone-B,Order 1 units within 48 hours
+HOUSEHOLD_2_462_TX_3_validation,TX_3,STOCKOUT,5,Zone-B,URGENT: Order 1 units immediately
+HOUSEHOLD_2_462_WI_1_validation,WI_1,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_2_462_WI_2_validation,WI_2,RESTOCK,4,Zone-B,Order 0 units within 48 hours
+HOUSEHOLD_2_462_WI_3_validation,WI_3,STOCKOUT,5,Zone-B,URGENT: Order 1 units immediately
+HOUSEHOLD_2_490_CA_1_validation,CA_1,RESTOCK,3,Zone-B,Order 8 units within 48 hours
+HOUSEHOLD_2_490_CA_2_validation,CA_2,RESTOCK,3,Zone-B,Order 27 units within 48 hours
+HOUSEHOLD_2_490_CA_3_validation,CA_3,RESTOCK,3,Zone-B,Order 9 units within 48 hours
+HOUSEHOLD_2_490_CA_4_validation,CA_4,RESTOCK,4,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_2_490_TX_1_validation,TX_1,RESTOCK,3,Zone-B,Order 7 units within 48 hours
+HOUSEHOLD_2_490_TX_2_validation,TX_2,RESTOCK,3,Zone-B,Order 10 units within 48 hours
+HOUSEHOLD_2_490_TX_3_validation,TX_3,RESTOCK,3,Zone-B,Order 9 units within 48 hours
+HOUSEHOLD_2_490_WI_1_validation,WI_1,RESTOCK,3,Zone-B,Order 11 units within 48 hours
+HOUSEHOLD_2_490_WI_2_validation,WI_2,RESTOCK,3,Zone-B,Order 6 units within 48 hours
+HOUSEHOLD_2_490_WI_3_validation,WI_3,RESTOCK,3,Zone-B,Order 6 units within 48 hours

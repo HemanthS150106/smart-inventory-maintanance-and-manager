@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Inventory System Report</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px 40px; color: #333; }
+h1 { border-bottom: 2px solid #ccc; padding-bottom: 10px; }
+section { margin-top: 40px; }
+</style>
+</head>
+<body>
+<h1>Smart Inventory Technical Architecture Report</h1>
+<section id="section-1">
+  <h2>1 — High Level Architecture</h2>
+  <p>Shows the complete system pipeline from Demand Forecasting down to Slot Allocation (implemented) and Cart Routing (planned).</p>
+  <img src="diagrams/high_level_architecture.png"
+       alt="High Level Architecture"
+       style="width:100%; max-width:1100px; border:1px solid #e2e8f0;
+              border-radius:8px; margin-top:12px;">
+  <br>
+  <a href="diagrams/high_level_architecture.svg" download
+     style="font-size:13px; color:#1a56db; font-weight:600;">Download SVG</a>
+</section>
+<section id="section-2">
+  <h2>2 — Master Class Diagram</h2>
+  <p>Internal software structural model detailing Express API routes, Python data generators, and JSON object layouts.</p>
+  <img src="diagrams/master_class_diagram.png"
+       alt="Master Class Diagram"
+       style="width:100%; max-width:1100px; border:1px solid #e2e8f0;
+              border-radius:8px; margin-top:12px;">
+  <br>
+  <a href="diagrams/master_class_diagram.svg" download
+     style="font-size:13px; color:#1a56db; font-weight:600;">Download SVG</a>
+</section>
+<section id="section-3">
+  <h2>3 — Entity Relationship Diagram</h2>
+  <p>Database schema tracking Orders, Arrivals, Item Meta, and Slot mappings natively mapped to the real JSON datasets.</p>
+  <img src="diagrams/er_diagram.png"
+       alt="Entity Relationship Diagram"
+       style="width:100%; max-width:1100px; border:1px solid #e2e8f0;
+              border-radius:8px; margin-top:12px;">
+  <br>
+  <a href="diagrams/er_diagram.svg" download
+     style="font-size:13px; color:#1a56db; font-weight:600;">Download SVG</a>
+</section>
+<section id="section-4">
+  <h2>4 — Swimlane Diagram</h2>
+  <p>Step-by-step cross-functional flow mapping user web interactions through Node.js Express APIs into standalone Python worker processes.</p>
+  <img src="diagrams/swimlane_diagram.png"
+       alt="Swimlane Diagram"
+       style="width:100%; max-width:1100px; border:1px solid #e2e8f0;
+              border-radius:8px; margin-top:12px;">
+  <br>
+  <a href="diagrams/swimlane_diagram.svg" download
+     style="font-size:13px; color:#1a56db; font-weight:600;">Download SVG</a>
+</section>
+<section id="section-5">
+  <h2>5 — State Diagram</h2>
+  <p>Order lifecycle tracking item fulfillments, demonstrating Order -> Partial -> Complete progression limits.</p>
+  <img src="diagrams/state_diagram.png"
+       alt="State Diagram"
+       style="width:100%; max-width:1100px; border:1px solid #e2e8f0;
+              border-radius:8px; margin-top:12px;">
+  <br>
+  <a href="diagrams/state_diagram.svg" download
+     style="font-size:13px; color:#1a56db; font-weight:600;">Download SVG</a>
+</section>
+<section id="section-6">
+  <h2>6 — UI Flow Diagram</h2>
+  <p>Navigational site-map linking Dashboard KPIs, Forecast logs, and Warehouse Canvas screens.</p>
+  <img src="diagrams/ui_flow_diagram.png"
+       alt="UI Flow Diagram"
+       style="width:100%; max-width:1100px; border:1px solid #e2e8f0;
+              border-radius:8px; margin-top:12px;">
+  <br>
+  <a href="diagrams/ui_flow_diagram.svg" download
+     style="font-size:13px; color:#1a56db; font-weight:600;">Download SVG</a>
+</section>
+<section id="section-7">
+  <h2>7 — Report Layouts</h2>
+  <p>Structured UI wireframes matching the actual HTML frontend sections across index, forecast, and slot screens.</p>
+  <img src="diagrams/report_layouts.png"
+       alt="Report Layouts"
+       style="width:100%; max-width:1100px; border:1px solid #e2e8f0;
+              border-radius:8px; margin-top:12px;">
+  <br>
+  <a href="diagrams/report_layouts.svg" download
+     style="font-size:13px; color:#1a56db; font-weight:600;">Download SVG</a>
+</section>
+<section id="section-8">
+  <h2>8 — External Interfaces</h2>
+  <p>System-level integration pathways showing local storage JSONs and REST API boundaries utilized by standard browser clients.</p>
+  <img src="diagrams/external_interfaces.png"
+       alt="External Interfaces"
+       style="width:100%; max-width:1100px; border:1px solid #e2e8f0;
+              border-radius:8px; margin-top:12px;">
+  <br>
+  <a href="diagrams/external_interfaces.svg" download
+     style="font-size:13px; color:#1a56db; font-weight:600;">Download SVG</a>
+</section>
+<section id="section-9">
+  <h2>9 — Deployment Diagram</h2>
+  <p>Execution layout showcasing the Node.js application wrapping multiple Python execution spaces and memory-resident LGBM/XGBoost structures.</p>
+  <img src="diagrams/deployment_diagram.png"
+       alt="Deployment Diagram"
+       style="width:100%; max-width:1100px; border:1px solid #e2e8f0;
+              border-radius:8px; margin-top:12px;">
+  <br>
+  <a href="diagrams/deployment_diagram.svg" download
+     style="font-size:13px; color:#1a56db; font-weight:600;">Download SVG</a>
+</section>
+</body></html>

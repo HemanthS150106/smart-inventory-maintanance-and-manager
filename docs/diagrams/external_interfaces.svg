@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" style="background:#fff; font-family:sans-serif;">
+<defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+  </defs><rect x="400" y="200" width="250" height="150" rx="5" fill="#e0e7ff" stroke="#4338ca" stroke-width="2" />
+<text x="525.0" y="225" font-size="16" fill="#0f172a" font-weight="bold" text-anchor="middle">EXPRESS BACKEND</text>
+<text x="525.0" y="245" font-size="16" fill="#0f172a"  text-anchor="middle">(server.js)</text>
+<rect x="50" y="250" width="150" height="50" rx="5" fill="#fff" stroke="#334155" stroke-width="2" />
+<text x="125.0" y="275" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">Managers Browser</text>
+<line x1="200" y1="255" x2="400" y2="255" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="290.0" y="243.0" width="108" height="18" fill="#fff" opacity="0.9"/>
+<text x="300.0" y="255.0" font-size="12" fill="#475569" font-weight="bold">JS fetch() DOM</text>
+<line x1="400" y1="280" x2="200" y2="280" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="290.0" y="268.0" width="108" height="18" fill="#fff" opacity="0.9"/>
+<text x="300.0" y="280.0" font-size="12" fill="#475569" font-weight="bold">JSON responses</text>
+<rect x="750" y="100" width="180" height="50" rx="5" fill="#fff" stroke="#b45309" stroke-width="2" />
+<text x="840.0" y="125" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">data/registry/*.json</text>
+<line x1="500" y1="200" x2="750" y2="125" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="615.0" y="150.5" width="94" height="18" fill="#fff" opacity="0.9"/>
+<text x="625.0" y="162.5" font-size="12" fill="#475569" font-weight="bold">readFileSync</text>
+<line x1="650" y1="200" x2="750" y2="145" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="690.0" y="160.5" width="164" height="18" fill="#fff" opacity="0.9"/>
+<text x="700.0" y="172.5" font-size="12" fill="#475569" font-weight="bold">writeFileSync (orders)</text>
+<rect x="750" y="250" width="180" height="50" rx="5" fill="#fff" stroke="#166534" stroke-width="2" />
+<text x="840.0" y="275" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">data/processed/*.csv</text>
+<line x1="650" y1="275" x2="750" y2="275" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="690.0" y="263.0" width="108" height="18" fill="#fff" opacity="0.9"/>
+<text x="700.0" y="275.0" font-size="12" fill="#475569" font-weight="bold">read CSV stats</text>
+<rect x="750" y="400" width="180" height="50" rx="5" fill="#fff" stroke="#334155" stroke-width="2" />
+<text x="840.0" y="425" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">backend/services/*.py</text>
+<line x1="525" y1="350" x2="750" y2="425" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="627.5" y="375.5" width="150" height="18" fill="#fff" opacity="0.9"/>
+<text x="637.5" y="387.5" font-size="12" fill="#475569" font-weight="bold">child_process.exec()</text>
+
+</svg>
