@@ -1,0 +1,138 @@
+[
+  {
+    "global_arrival_id": 1,
+    "batch_id": 1,
+    "order_id": "ORD-8592",
+    "timestamp": "16 Apr 2026, 11:43 AM",
+    "slots_allocated": [
+      {
+        "Item ID": "FOODS_3_288_CA_3_validation",
+        "Size": "M",
+        "Weight(kg)": 32.5,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1A-01-L2"
+      },
+      {
+        "Item ID": "FOODS_3_288_CA_2_validation",
+        "Size": "M",
+        "Weight(kg)": 26.8,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1A-01-L3"
+      }
+    ]
+  },
+  {
+    "global_arrival_id": 2,
+    "batch_id": 2,
+    "order_id": "ORD-2594",
+    "timestamp": "16 Apr 2026, 11:44 AM",
+    "slots_allocated": [
+      {
+        "Item ID": "FOODS_3_288_CA_3_validation",
+        "Size": "M",
+        "Weight(kg)": 32.5,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1A-02-L2"
+      },
+      {
+        "Item ID": "FOODS_3_288_CA_2_validation",
+        "Size": "M",
+        "Weight(kg)": 26.8,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1A-02-L3"
+      }
+    ]
+  },
+  {
+    "global_arrival_id": 3,
+    "batch_id": 3,
+    "order_id": "ORD-7876",
+    "timestamp": "16 Apr 2026, 11:58 AM",
+    "slots_allocated": [
+      {
+        "Item ID": "FOODS_3_288_CA_3_validation",
+        "Size": "M",
+        "Weight(kg)": 32.5,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1A-03-L2"
+      }
+    ]
+  },
+  {
+    "global_arrival_id": 4,
+    "batch_id": 4,
+    "order_id": "ORD-9416",
+    "timestamp": "16 Apr 2026, 01:26 PM",
+    "slots_allocated": [
+      {
+        "Item ID": "FOODS_3_288_CA_3_validation",
+        "Size": "M",
+        "Weight(kg)": 32.5,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1A-04-L2"
+      },
+      {
+        "Item ID": "FOODS_3_288_CA_2_validation",
+        "Size": "M",
+        "Weight(kg)": 26.8,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1A-03-L3"
+      }
+    ]
+  },
+  {
+    "global_arrival_id": 5,
+    "batch_id": 5,
+    "order_id": "ORD-9914",
+    "timestamp": "16 Apr 2026, 01:29 PM",
+    "slots_allocated": [
+      {
+        "Item ID": "FOODS_3_288_CA_3_validation",
+        "Size": "M",
+        "Weight(kg)": 32.5,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1A-05-L2"
+      },
+      {
+        "Item ID": "FOODS_3_288_CA_2_validation",
+        "Size": "M",
+        "Weight(kg)": 26.8,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1A-04-L3"
+      },
+      {
+        "Item ID": "FOODS_3_150_WI_2_validation",
+        "Size": "L",
+        "Weight(kg)": 19.3,
+        "Predicted Demand": 800,
+        "Zone": "B",
+        "Slot ID": "B1A-01-L3"
+      }
+    ]
+  },
+  {
+    "global_arrival_id": 6,
+    "batch_id": 6,
+    "order_id": "ORD-4216",
+    "timestamp": "16 Apr 2026, 01:37 PM",
+    "slots_allocated": [
+      {
+        "Item ID": "FOODS_3_288_CA_3_validation",
+        "Size": "M",
+        "Weight(kg)": 32.5,
+        "Predicted Demand": 800,
+        "Zone": "A",
+        "Slot ID": "A1B-01-L2"
+      }
+    ]
+  }
+]

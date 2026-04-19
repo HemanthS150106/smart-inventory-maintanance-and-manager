@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700" style="background:#fff; font-family:sans-serif;">
+<defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+  </defs><rect x="50" y="50" width="900" height="600" rx="5" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+<text x="500.0" y="75" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">Server Instance Node</text>
+<text x="60" y="95" font-size="12" fill="#333"  ><<device>></text>
+<rect x="80" y="120" width="250" height="250" rx="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" />
+<text x="205.0" y="145" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">Node.js Server</text>
+<text x="90" y="165" font-size="12" fill="#333"  ><<execution env>></text>
+<rect x="100" y="170" width="210" height="60" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+<text x="205.0" y="195" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">server.js (port 3001)</text>
+<text x="205.0" y="215" font-size="12" fill="#0f172a"  text-anchor="middle">cors, express=^5.2.1</text>
+<rect x="100" y="250" width="210" height="40" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+<text x="205.0" y="275" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">express.static('/frontend')</text>
+<rect x="100" y="310" width="210" height="40" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+<text x="205.0" y="335" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">exec() spawns</text>
+<rect x="400" y="120" width="500" height="250" rx="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" />
+<text x="650.0" y="145" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">Python 3 Runtime</text>
+<text x="410" y="165" font-size="12" fill="#333"  ><<execution env>></text>
+<rect x="420" y="160" width="220" height="50" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+<text x="530.0" y="185" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">demand_forecasting_local.ipynb</text>
+<rect x="420" y="230" width="220" height="50" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+<text x="530.0" y="255" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">slot_allocator.py</text>
+<text x="530.0" y="275" font-size="12" fill="#0f172a"  text-anchor="middle">(Pandas, Numpy)</text>
+<rect x="420" y="300" width="220" height="50" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+<text x="530.0" y="325" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">svg_generator.py</text>
+<rect x="670" y="160" width="180" height="120" rx="5" fill="#cbd5e1" stroke="#333" stroke-width="2" />
+<text x="760.0" y="185" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">Models Directory</text>
+<text x="760.0" y="205" font-size="12" fill="#0f172a"  text-anchor="middle">lgbm_model (In Memory)</text>
+<text x="760.0" y="225" font-size="12" fill="#0f172a"  text-anchor="middle">xgb_model (In Memory)</text>
+<rect x="80" y="450" width="380" height="150" rx="5" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2" />
+<text x="270.0" y="475" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">File System: Registry Data</text>
+<text x="90" y="495" font-size="12" fill="#333"  ><<artifact>></text>
+<text x="100" y="500" font-size="14" fill="#333" text-anchor="start"  >- orders.json</text>
+<text x="100" y="520" font-size="14" fill="#333" text-anchor="start"  >- item_meta.json</text>
+<text x="250" y="500" font-size="14" fill="#333" text-anchor="start"  >- slot_registry.json</text>
+<text x="250" y="520" font-size="14" fill="#333" text-anchor="start"  >- arrivals_history.json</text>
+<rect x="520" y="450" width="380" height="150" rx="5" fill="#dcfce7" stroke="#166534" stroke-width="2" />
+<text x="710.0" y="475" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">File System: Processed Output</text>
+<text x="530" y="495" font-size="12" fill="#333"  ><<artifact>></text>
+<text x="540" y="500" font-size="14" fill="#333" text-anchor="start"  >- forecasts.csv</text>
+<text x="540" y="520" font-size="14" fill="#333" text-anchor="start"  >- batch_allocation_results.csv</text>
+<text x="540" y="540" font-size="14" fill="#333" text-anchor="start"  >- frontend/svgs/*.svg</text>
+
+</svg>

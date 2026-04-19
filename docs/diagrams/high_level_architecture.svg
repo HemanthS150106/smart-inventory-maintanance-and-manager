@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700" style="background:#fff; font-family:sans-serif;">
+<defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+  </defs><rect x="10" y="10" width="980" height="680" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" rx="20"/>
+<text x="500" y="40" font-size="20" fill="#333" text-anchor="middle" font-weight="bold" >Smart Inventory System - Actual High Level Architecture</text>
+<rect x="750" y="630" width="15" height="15" fill="#fef3c7" stroke="#333"/>
+<text x="775" y="642" font-size="12" fill="#333" text-anchor="start"  >Implemented</text>
+<rect x="860" y="630" width="15" height="15" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="4,4"/>
+<text x="885" y="642" font-size="12" fill="#333" text-anchor="start"  >Planned</text>
+<rect x="40" y="70" width="450" height="300" fill="#fef3c7" stroke="#b45309" stroke-width="2" rx="10"/>
+<text x="50" y="95" font-size="16" fill="#333" text-anchor="start" font-weight="bold" >Demand Forecasting (Implemented)</text>
+<rect x="200" y="110" width="100" height="60" rx="5" fill="#d97706" stroke="#78350f" stroke-width="2" />
+<text x="250.0" y="135" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle"></text>
+<text x="250.0" y="155" font-size="14" fill="#0f172a"  text-anchor="middle">Database</text>
+<rect x="160" y="200" width="180" height="50" rx="5" fill="#b45309" stroke="#78350f" stroke-width="2" />
+<text x="250.0" y="225" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">Model Router</text>
+<text x="250.0" y="245" font-size="14" fill="#0f172a"  text-anchor="middle">(via pandas rules)</text>
+<rect x="60" y="290" width="120" height="50" rx="5" fill="#fff" stroke="#b45309" stroke-width="2" />
+<text x="120.0" y="315" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">LGBM + XGBoost</text>
+<text x="120.0" y="335" font-size="12" fill="#0f172a"  text-anchor="middle">(smooth/erratic)</text>
+<rect x="220" y="290" width="100" height="50" rx="5" fill="#fff" stroke="#b45309" stroke-width="2" />
+<text x="270.0" y="315" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">Averaging</text>
+<text x="270.0" y="335" font-size="12" fill="#0f172a"  text-anchor="middle">(intermittent)</text>
+<rect x="340" y="290" width="100" height="50" rx="5" fill="#fff" stroke="#b45309" stroke-width="2" />
+<text x="390.0" y="315" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">Zero Output</text>
+<text x="390.0" y="335" font-size="12" fill="#0f172a"  text-anchor="middle">(dead)</text>
+<line x1="250" y1="170" x2="250" y2="200" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="240.0" y="173.0" width="108" height="18" fill="#fff" opacity="0.9"/>
+<text x="250.0" y="185.0" font-size="12" fill="#475569" font-weight="bold">sales_hist.csv</text>
+<line x1="200" y1="250" x2="120" y2="290" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<line x1="250" y1="250" x2="270" y2="290" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<line x1="300" y1="250" x2="390" y2="290" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="200" y="390" width="140" height="40" rx="5" fill="#78350f" stroke="#451a03" stroke-width="2" />
+<text x="270.0" y="415" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle"></text>
+<text x="270.0" y="435" font-size="14" fill="#0f172a"  text-anchor="middle">Forecast Output</text>
+<line x1="120" y1="340" x2="220" y2="390" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<line x1="270" y1="340" x2="270" y2="390" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<line x1="390" y1="340" x2="320" y2="390" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="40" y="450" width="450" height="200" fill="#dcfce7" stroke="#166534" stroke-width="2" rx="10"/>
+<text x="50" y="475" font-size="16" fill="#333" text-anchor="start" font-weight="bold" >Dynamic Slotting (Implemented)</text>
+<rect x="60" y="500" width="140" height="50" rx="5" fill="#fff" stroke="#166534" stroke-width="2" />
+<text x="130.0" y="525" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">item_meta.json</text>
+<text x="130.0" y="545" font-size="12" fill="#0f172a"  text-anchor="middle">(Weight & Size)</text>
+<rect x="250" y="500" width="180" height="60" rx="5" fill="#15803d" stroke="#14532d" stroke-width="2" />
+<text x="340.0" y="525" font-size="14" fill="#0f172a" font-weight="bold" text-anchor="middle">Slot Allocation Logic</text>
+<text x="340.0" y="545" font-size="14" fill="#0f172a"  text-anchor="middle">(Rule-based logic)</text>
+<rect x="60" y="580" width="140" height="50" rx="5" fill="#fff" stroke="#166534" stroke-width="2" />
+<text x="130.0" y="605" font-size="12" fill="#0f172a" font-weight="bold" text-anchor="middle">Warehouse SVG</text>
+<text x="130.0" y="625" font-size="12" fill="#0f172a"  text-anchor="middle">svg_generator.py</text>
+<line x1="270" y1="430" x2="340" y2="500" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="295.0" y="453.0" width="101" height="18" fill="#fff" opacity="0.9"/>
+<text x="305.0" y="465.0" font-size="12" fill="#475569" font-weight="bold">forecasts.csv</text>
+<line x1="200" y1="525" x2="250" y2="525" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<line x1="340" y1="560" x2="200" y2="605" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="260.0" y="570.5" width="136" height="18" fill="#fff" opacity="0.9"/>
+<text x="270.0" y="582.5" font-size="12" fill="#475569" font-weight="bold">slot_registry.json</text>
+<rect x="520" y="300" width="440" height="130" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8,4" rx="10"/>
+<text x="530" y="325" font-size="16" fill="#64748b" text-anchor="start" font-weight="bold" font-style="italic">Cart Assignment (Planned)</text>
+<rect x="540" y="350" width="160" height="50" rx="5" fill="#fff" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="550" y="375" font-size="12" fill="#64748b"  font-style="italic">Fuzzy C Clustering</text>
+<rect x="650" y="340" width="60" height="20" rx="4" fill="#64748b"/>
+<text x="680" y="354" font-size="10" fill="#fff" text-anchor="middle">Planned</text>
+<rect x="750" y="350" width="180" height="50" rx="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="760" y="375" font-size="12" fill="#64748b"  font-style="italic">Cart Capacity DB</text>
+<rect x="880" y="340" width="60" height="20" rx="4" fill="#64748b"/>
+<text x="910" y="354" font-size="10" fill="#fff" text-anchor="middle">Planned</text>
+<line x1="430" y1="530" x2="540" y2="375" stroke="#334155" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+<rect x="475.0" y="440.5" width="66" height="18" fill="#fff" opacity="0.9"/>
+<text x="485.0" y="452.5" font-size="12" fill="#475569" font-weight="bold">Triggers</text>
+<line x1="700" y1="375" x2="750" y2="375" stroke="#334155" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+<rect x="520" y="450" width="440" height="200" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8,4" rx="10"/>
+<text x="530" y="475" font-size="16" fill="#64748b" text-anchor="start" font-weight="bold" font-style="italic">Hybrid Routing (Planned)</text>
+<rect x="750" y="500" width="180" height="50" rx="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="760" y="525" font-size="10" fill="#64748b"  font-style="italic">IACO (Global Optimizer)</text>
+<rect x="880" y="490" width="60" height="20" rx="4" fill="#64748b"/>
+<text x="910" y="504" font-size="10" fill="#fff" text-anchor="middle">Planned</text>
+<rect x="540" y="500" width="160" height="50" rx="5" fill="#fff" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="550" y="525" font-size="10" fill="#64748b"  font-style="italic">A* Path Planner</text>
+<rect x="650" y="490" width="60" height="20" rx="4" fill="#64748b"/>
+<text x="680" y="504" font-size="10" fill="#fff" text-anchor="middle">Planned</text>
+<rect x="540" y="570" width="160" height="50" rx="5" fill="#fff" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="550" y="595" font-size="10" fill="#64748b"  font-style="italic">DWA Local Planner</text>
+<rect x="650" y="560" width="60" height="20" rx="4" fill="#64748b"/>
+<text x="680" y="574" font-size="10" fill="#fff" text-anchor="middle">Planned</text>
+<rect x="750" y="570" width="180" height="50" rx="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="760" y="595" font-size="10" fill="#64748b"  font-style="italic">Optimized Cart Route</text>
+<rect x="880" y="560" width="60" height="20" rx="4" fill="#64748b"/>
+<text x="910" y="574" font-size="10" fill="#fff" text-anchor="middle">Planned</text>
+<line x1="840" y1="400" x2="840" y2="500" stroke="#334155" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+<line x1="750" y1="525" x2="700" y2="525" stroke="#334155" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+<line x1="620" y1="550" x2="620" y2="570" stroke="#334155" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+<line x1="700" y1="595" x2="750" y2="595" stroke="#334155" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+
+</svg>

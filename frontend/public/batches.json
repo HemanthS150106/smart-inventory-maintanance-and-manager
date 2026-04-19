@@ -1,0 +1,96 @@
+[
+  {
+    "batch_id": 1,
+    "timestamp": "16 Apr 2026, 10:48 AM",
+    "slots_allocated": [
+      {
+        "Item ID": "FOODS_2_185",
+        "Size": "XL",
+        "Weight(kg)": 132.21,
+        "Predicted Demand": 943.9,
+        "Zone": "C",
+        "Slot ID": "C1A-01-L1"
+      },
+      {
+        "Item ID": "FOODS_1_214",
+        "Size": "M",
+        "Weight(kg)": 9.02,
+        "Predicted Demand": 946.2,
+        "Zone": "A",
+        "Slot ID": "A1A-01-L4"
+      },
+      {
+        "Item ID": "FOODS_3_469",
+        "Size": "XL",
+        "Weight(kg)": 95.78,
+        "Predicted Demand": 944.1,
+        "Zone": "C",
+        "Slot ID": "C1A-02-L1"
+      },
+      {
+        "Item ID": "FOODS_2_153",
+        "Size": "L",
+        "Weight(kg)": 53.91,
+        "Predicted Demand": 942.8,
+        "Zone": "B",
+        "Slot ID": "B1A-01-L2"
+      },
+      {
+        "Item ID": "FOODS_2_081",
+        "Size": "L",
+        "Weight(kg)": 37.61,
+        "Predicted Demand": 948.8,
+        "Zone": "B",
+        "Slot ID": "B1A-02-L2"
+      },
+      {
+        "Item ID": "HOBBIES_1_144",
+        "Size": "XL",
+        "Weight(kg)": 132.86,
+        "Predicted Demand": 943.8,
+        "Zone": "C",
+        "Slot ID": "C1A-03-L1"
+      },
+      {
+        "Item ID": "HOUSEHOLD_1_138",
+        "Size": "XL",
+        "Weight(kg)": 72.79,
+        "Predicted Demand": 945.4,
+        "Zone": "C",
+        "Slot ID": "C1B-01-L1"
+      },
+      {
+        "Item ID": "FOODS_3_222",
+        "Size": "M",
+        "Weight(kg)": 22.77,
+        "Predicted Demand": 947.7,
+        "Zone": "A",
+        "Slot ID": "A1A-01-L3"
+      },
+      {
+        "Item ID": "FOODS_3_515",
+        "Size": "XL",
+        "Weight(kg)": 114.81,
+        "Predicted Demand": 946.3,
+        "Zone": "C",
+        "Slot ID": "C1B-02-L1"
+      },
+      {
+        "Item ID": "HOUSEHOLD_1_405",
+        "Size": "L",
+        "Weight(kg)": 33.13,
+        "Predicted Demand": 945.8,
+        "Zone": "B",
+        "Slot ID": "B1A-03-L2"
+      },
+      {
+        "Item ID": "FOODS_3_747",
+        "Size": "M",
+        "Weight(kg)": 8.83,
+        "Predicted Demand": 948.5,
+        "Zone": "A",
+        "Slot ID": "A1A-02-L4"
+      }
+    ]
+  }
+]

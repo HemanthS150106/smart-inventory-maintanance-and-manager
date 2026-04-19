@@ -1,0 +1,32 @@
+/* Design tokens — Smart Inventory (Forecasting module) */
+:root {
+  --si-primary: #1e3a8a;
+  --si-primary-hover: #172554;
+  --si-accent: #f59e0b;
+  --si-bg: #f5f7fa;
+
+  --si-surface: #ffffff;
+  --si-text: #0f172a;
+  --si-text-muted: #64748b;
+  --si-border: rgb(226 232 240 / 0.85);
+
+  --si-radius-sm: 0.5rem;
+  --si-radius-md: 0.75rem;
+  --si-radius-lg: 1rem;
+  --si-radius-xl: 1.25rem;
+  --si-radius-2xl: 1.5rem;
+
+  --si-shadow-sm: 0 1px 2px rgb(15 23 42 / 0.05);
+  --si-shadow-card:
+    0 1px 3px rgb(15 23 42 / 0.06), 0 1px 2px rgb(15 23 42 / 0.04);
+  --si-shadow-card-hover:
+    0 10px 25px -5px rgb(15 23 42 / 0.08), 0 4px 10px -4px rgb(15 23 42 / 0.05);
+  --si-shadow-btn:
+    0 10px 25px -5px rgb(30 58 138 / 0.45), 0 4px 10px -4px rgb(15 23 42 / 0.12);
+
+  --si-space-section: 2.5rem;
+  --si-space-card: 1.5rem;
+
+  --si-transition: 0.2s ease;
+  --si-transition-fast: 0.15s ease;
+}

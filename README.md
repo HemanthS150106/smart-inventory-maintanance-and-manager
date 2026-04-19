@@ -1,96 +1,31 @@
-# Smart Warehouse Demand Forecasting System
+# Smart Inventory Management System
 
-This project implements a **demand forecasting and inventory recommendation system** for a warehouse using the **M5 retail dataset**.
-The system predicts product demand and generates **recommended order quantities** that a warehouse manager can use for replenishment planning.
+The Smart Inventory Management System is an end-to-end full-stack application designed to optimize warehouse operations through intelligent automation, space utilization analysis, slot routing, dynamic simulations, and demand forecasting.
 
----
+## 🚀 Features
 
-# Installation
+- **Demand Forecasting Pipeline**: Leveraging machine learning to predict optimal storage zones and future demand intensity. Includes robust data preprocessing steps (stockout imputation and outlier clipping) to reduce Weighted Average Percentage Error (WAPE).
+- **Warehouse Slot Allocation**: High-fidelity, 5-level vertical rack structure mapping (L1-L5). A strict weight-based allocation algorithm ensures safe, optimal, and efficient inventory placement.
+- **Dynamic Warehouse Blueprint**: Programmatic generation of pure SVG floor plans that represent a cumulative map of all occupied slots, demand intensity, uprights, and shelf boards.
+- **Interactive React Dashboard**: A responsive Vite React application providing real-time data visualization of zone utilization, shelf-level breakdowns, and overall warehouse state.
+- **Reliable State Management**: Complete synchronized control flows, such as a "Reset Warehouse" operation that cleanly clears arrival histories, resets counters, and aligns the backend data with UI visualizations.
+- **Routing & Simulation**: Advanced path planning, cart allocation, and warehouse layout optimization for efficient picking and stock management.
 
-Run the following command **only once** after cloning the repository:
-
-```
-pip install -r requirements.txt
-```
-
-This installs all required dependencies.
-
----
-
-# Running the System
-
-After installation, the system runs in **three steps**.
-
-## 1. Train the Forecasting Model
+## 📁 Project Structure
 
 ```
-python models/train_model.py
+smart-inventory-app/
+├── backend/    # Node.js backend and API logic
+├── frontend/   # React/Vite dashboard and UI components
+├── ml/         # Jupyter notebooks and demand forecasting models
+├── data/       # Datasets and generated warehouse blueprints (SVGs)
+└── docs/       # Architectural diagrams and technical documentation
 ```
 
-This trains the **LightGBM demand forecasting model** using the historical sales dataset.
+## 🛠️ Tech Stack
 
----
+- **Frontend**: React, Vite, HTML/Vanilla CSS, Tailwind CSS
+- **Backend**: Node.js, Express
+- **Machine Learning**: Python, Jupyter, Pandas, Scikit-Learn, LightGBM
+- **Documentation & Visualization**: SVG / Markdown
 
-## 2. Generate Demand Forecast
-
-```
-python models/forecast.py
-```
-
-This step:
-
-* Predicts product demand
-* Generates order recommendations
-* Produces forecast files used by the UI
-
----
-
-## 3. Launch the Warehouse Manager UI
-
-```
-streamlit run models/app.py
-```
-
-The UI displays:
-
-* Products that require restocking
-* Predicted demand
-* Current stock
-* Recommended order quantity
-
-This interface is designed for **warehouse managers to quickly view replenishment decisions**.
-
----
-
-# Project Structure
-
-```
-data/
-    Retail dataset files
-
-models/
-    train_model.py
-    forecast.py
-    app.py
-    demand_model.pkl
-
-requirements.txt
-README.md
-```
-
----
-
-# Forecasting Approach
-
-The system uses a **Global Demand Forecasting Model (LightGBM)** with lag-based features to predict weekly product demand.
-Forecasts are combined with a simple **inventory replenishment policy** to generate recommended order quantities.
-
----
-
-# Output
-
-The system generates:
-
-* Demand predictions
-* Inventory reorder recommendations
-* Warehouse decision interface
