@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../auth/AuthProvider.jsx'
 
 function navLinkClass({ isActive }) {
   return [
@@ -10,6 +12,7 @@ function navLinkClass({ isActive }) {
 }
 
 export default function Navbar() {
+  const { isAuthenticated, logout } = useContext(AuthContext)
   return (
     <header className="si-nav">
       <nav
@@ -45,6 +48,21 @@ export default function Navbar() {
               Slot Allocation
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/workers" className={navLinkClass}>
+              Cart Allocation
+            </NavLink>
+          </li>
+          {isAuthenticated && (
+            <li>
+              <button
+                className="si-btn si-btn--ghost"
+                onClick={() => { logout(); window.location.href = '/' }}
+              >
+                Sign out
+              </button>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

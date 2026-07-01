@@ -1,0 +1,88 @@
+{
+  "carts": [
+    {
+      "cart_id": "CART-001",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W281"
+    },
+    {
+      "cart_id": "CART-002",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W033"
+    },
+    {
+      "cart_id": "CART-003",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W399"
+    },
+    {
+      "cart_id": "CART-004",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W132"
+    },
+    {
+      "cart_id": "CART-005",
+      "max_weight_kg": 124,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W295"
+    },
+    {
+      "cart_id": "CART-006",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W084"
+    },
+    {
+      "cart_id": "CART-007",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W175"
+    },
+    {
+      "cart_id": "CART-008",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W310"
+    },
+    {
+      "cart_id": "CART-009",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W343"
+    },
+    {
+      "cart_id": "CART-010",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W094"
+    },
+    {
+      "cart_id": "CART-011",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W401"
+    },
+    {
+      "cart_id": "CART-012",
+      "max_weight_kg": 150,
+      "max_volume_cf": 40,
+      "status": "assigned",
+      "assigned_worker_id": "W402"
+    }
+  ]
+}

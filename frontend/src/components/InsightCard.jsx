@@ -61,14 +61,6 @@ export default function InsightCard({
         {criticalMessage ? (
           <li className="font-medium text-red-700">{criticalMessage}</li>
         ) : null}
-        {warningReorder ? (
-          <li className="text-amber-800">{warningReorder}</li>
-        ) : null}
-        {restockMessage ? (
-          <li className="font-medium text-[var(--si-primary)]">
-            {restockMessage}
-          </li>
-        ) : null}
         {hasForecast ? (
           <li className="text-slate-500">
             On hand:{' '}

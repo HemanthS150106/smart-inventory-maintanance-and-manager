@@ -1,137 +1,193 @@
-import { useNavigate } from 'react-router-dom'
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../auth/AuthProvider.jsx';
 
-/**
- * @param {{ onSignIn?: () => void }} props
- */
-export default function Login({ onSignIn }) {
-  const navigate = useNavigate()
+export default function Login() {
+  const [role,     setRole]     = useState('admin');  // 'admin'|'worker'
+  const [loginId,  setLoginId]  = useState('');
+  const [password, setPassword] = useState('');
+  const [error,    setError]    = useState('');
+  const [loading,  setLoading]  = useState(false);
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    onSignIn?.()
-    navigate('/home')
+  async function handleLogin(e) {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    try {
+      if (role === 'admin') {
+        const res  = await fetch('/api/auth/admin-login', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ login_id: loginId, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          sessionStorage.setItem('admin', JSON.stringify(data.admin));
+          login(data.token);
+          navigate('/home');
+        } else {
+          setError(data.error || 'Invalid admin credentials');
+        }
+      } else {
+        const res  = await fetch('/api/workers/login', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ login_id: loginId, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          sessionStorage.setItem('worker', JSON.stringify(data.worker));
+          navigate('/worker-dashboard');
+        } else {
+          setError(data.error || 'Invalid worker credentials');
+        }
+      }
+    } catch (err) {
+      setError('Connection error. Is the server running?');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    <div className="flex min-h-screen flex-col lg:flex-row">
-      <section
-        className="si-login-hero relative flex flex-col justify-center overflow-hidden px-8 py-12 text-white lg:w-1/2 lg:px-14 lg:py-16"
-        aria-labelledby="login-brand-heading"
-      >
-        <div
-          className="si-login-hero-grid pointer-events-none absolute inset-0 z-0 opacity-[0.08]"
-          aria-hidden
-        />
-        <div
-          className="si-login-hero-glow pointer-events-none absolute -right-24 -top-24 z-[1] h-64 w-64 rounded-full opacity-20 blur-3xl"
-          aria-hidden
-        />
-        <div className="relative z-10 max-w-lg">
-          <p className="si-accent mb-3 text-sm font-semibold uppercase tracking-widest">
-          
-          </p>
-          <h1
-            id="login-brand-heading"
-            className="si-accent mb-3 text-2xl font-semibold uppercase tracking-normal">
-              
-          
+    <div style={{
+      minHeight: '100vh', display: 'flex',
+      alignItems: 'center', justifyContent: 'center',
+      background: '#f1f5f9'
+    }}>
+      <div style={{
+        background: 'white', borderRadius: '16px',
+        padding: '40px', width: '400px',
+        boxShadow: '0 4px 24px rgba(0,0,0,0.08)'
+      }}>
+        {/* Logo / Title */}
+        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+          <div style={{ fontSize: '36px', marginBottom: '8px' }}>
+            🏭
+          </div>
+          <h1 style={{ margin: 0, fontSize: '22px',
+                       color: '#1e293b', fontWeight: '700' }}>
             Smart Inventory
           </h1>
-      
-     
+          <p style={{ margin: '4px 0 0', color: '#64748b',
+                      fontSize: '14px' }}>
+            Warehouse Management System
+          </p>
         </div>
-      </section>
 
-      <section
-        className="si-login-aside relative flex flex-1 flex-col items-center justify-center px-6 py-16 sm:px-10 sm:py-20 lg:w-1/2 lg:px-16 lg:py-24"
-        aria-labelledby="login-form-heading"
-      >
-        <div
-          className="si-login-aside-deco pointer-events-none absolute inset-0 opacity-[0.35]"
-          aria-hidden
-        />
-        <div className="relative mx-auto w-full max-w-md">
-          <p className="si-eyebrow text-sm font-semibold uppercase tracking-widest lg:hidden">
-            Sign in
-          </p>
-          <h2
-            id="login-form-heading"
-            className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-[2rem] lg:mt-0 lg:text-4xl lg:leading-tight"
-          >
-            <span className="lg:hidden">Welcome back</span>
-            <span className="hidden lg:inline">Sign in to continue</span>
-          </h2>
-          <p className="mt-3 hidden text-base leading-relaxed text-slate-600/70 lg:block">
-            Use your organization credentials to open the dashboard.
-          </p>
-
-          <form
-            onSubmit={handleSubmit}
-            className="si-card si-card--login space-y-7"
-          >
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-slate-700"
-              >
-                Work email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="si-input rounded-xl"
-                placeholder="you@company.com"
-              />
-            </div>
-            <div>
-              <div className="flex items-center justify-between gap-2">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-slate-700"
-                >
-                  Password
-                </label>
-                <button type="button" className="si-btn si-btn--ghost">
-                  Forgot password?
-                </button>
-              </div>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                className="si-input rounded-xl"
-                placeholder="Enter your password"
-              />
-            </div>
-            <div className="flex items-center gap-3 pt-1">
-              <input
-                id="remember"
-                name="remember"
-                type="checkbox"
-                className="si-checkbox"
-              />
-              <label
-                htmlFor="remember"
-                className="text-sm text-slate-600/75"
-              >
-                Keep me signed in on this device
-              </label>
-            </div>
-            <button type="submit" className="si-btn si-btn--primary">
-              Sign in
+        {/* Role Toggle */}
+        <div style={{
+          display: 'flex', background: '#f1f5f9',
+          borderRadius: '10px', padding: '4px',
+          marginBottom: '24px'
+        }}>
+          {['admin', 'worker'].map(r => (
+            <button
+              key={r}
+              onClick={() => { setRole(r); setError(''); }}
+              style={{
+                flex: 1, padding: '10px',
+                border: 'none', borderRadius: '8px',
+                cursor: 'pointer', fontSize: '14px',
+                fontWeight: '600', transition: 'all 0.2s',
+                background: role === r ? 'white' : 'transparent',
+                color: role === r ? '#1e40af' : '#64748b',
+                boxShadow: role === r
+                  ? '0 1px 4px rgba(0,0,0,0.12)' : 'none'
+              }}
+            >
+              {r === 'admin' ? '👔 Admin' : '👷 Worker'}
             </button>
-          </form>
-
-          <p className="mt-8 text-center text-xs text-slate-500/80">
-            By signing in you agree to internal data handling policies.
-          </p>
+          ))}
         </div>
-      </section>
+
+        {/* Form */}
+        <form onSubmit={handleLogin}>
+          <div style={{ marginBottom: '16px' }}>
+            <label style={{ fontSize: '13px', color: '#475569',
+                            fontWeight: '500', display: 'block',
+                            marginBottom: '6px' }}>
+              {role === 'admin' ? 'Admin ID' : 'Worker ID'}
+            </label>
+            <input
+              value={loginId}
+              onChange={e => setLoginId(e.target.value)}
+              placeholder={role === 'admin'
+                ? 'admin' : 'worker001'}
+              required
+              style={{
+                width: '100%', padding: '11px 14px',
+                border: '1.5px solid #e2e8f0',
+                borderRadius: '8px', fontSize: '14px',
+                boxSizing: 'border-box', outline: 'none',
+                transition: 'border-color 0.2s'
+              }}
+              onFocus={e =>
+                e.target.style.borderColor = '#3b82f6'}
+              onBlur={e =>
+                e.target.style.borderColor = '#e2e8f0'}
+            />
+          </div>
+
+          <div style={{ marginBottom: '8px' }}>
+            <label style={{ fontSize: '13px', color: '#475569',
+                            fontWeight: '500', display: 'block',
+                            marginBottom: '6px' }}>
+              Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              placeholder="••••••••"
+              required
+              style={{
+                width: '100%', padding: '11px 14px',
+                border: '1.5px solid #e2e8f0',
+                borderRadius: '8px', fontSize: '14px',
+                boxSizing: 'border-box', outline: 'none'
+              }}
+            />
+          </div>
+
+          {role === 'worker' && (
+            <p style={{ fontSize: '12px', color: '#94a3b8',
+                        margin: '0 0 16px' }}>
+              Default password: warehouse123
+            </p>
+          )}
+
+          {error && (
+            <div style={{
+              background: '#fef2f2', border: '1px solid #fecaca',
+              borderRadius: '8px', padding: '10px 14px',
+              marginBottom: '16px', fontSize: '13px',
+              color: '#dc2626'
+            }}>
+              {error}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              width: '100%', padding: '12px',
+              background: loading ? '#94a3b8' : '#1e40af',
+              color: 'white', border: 'none',
+              borderRadius: '8px', fontSize: '15px',
+              fontWeight: '600', cursor: loading
+                ? 'not-allowed' : 'pointer',
+              marginTop: '8px'
+            }}
+          >
+            {loading ? 'Signing in...' : 'Sign In'}
+          </button>
+        </form>
+      </div>
     </div>
-  )
+  );
 }

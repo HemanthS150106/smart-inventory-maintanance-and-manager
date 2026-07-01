@@ -1,10 +1,60 @@
 {
-  "order_id": "ORD-7773",
+  "order_id": "ORD-9672",
   "items": [
     {
-      "item_id": "FOODS_3_288_CA_3_validation",
-      "weight": 32.5,
-      "qty": 872
+      "item_id": "FOODS_2_044_TX_3_validation",
+      "weight": 0,
+      "qty": 10
+    },
+    {
+      "item_id": "FOODS_2_044_WI_1_validation",
+      "weight": 0,
+      "qty": 13
+    },
+    {
+      "item_id": "FOODS_2_059_CA_3_validation",
+      "weight": 0,
+      "qty": 20
+    },
+    {
+      "item_id": "FOODS_2_102_CA_1_validation",
+      "weight": 0,
+      "qty": 8
+    },
+    {
+      "item_id": "FOODS_2_102_WI_3_validation",
+      "weight": 0,
+      "qty": 3
+    },
+    {
+      "item_id": "FOODS_2_380_CA_3_validation",
+      "weight": 0,
+      "qty": 38
+    },
+    {
+      "item_id": "FOODS_3_017_TX_2_validation",
+      "weight": 0,
+      "qty": 2
+    },
+    {
+      "item_id": "FOODS_3_093_WI_2_validation",
+      "weight": 0,
+      "qty": 34
+    },
+    {
+      "item_id": "FOODS_3_142_CA_3_validation",
+      "weight": 0,
+      "qty": 23
+    },
+    {
+      "item_id": "FOODS_3_288_WI_3_validation",
+      "weight": 0,
+      "qty": 44
+    },
+    {
+      "item_id": "FOODS_3_525_CA_3_validation",
+      "weight": 0,
+      "qty": 18
     }
   ]
 }

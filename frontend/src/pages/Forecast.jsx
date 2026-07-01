@@ -63,10 +63,10 @@ export default function Forecast() {
          const forecast28d = stats.totalForecast;
          const shortage = Math.max(0, forecast28d - prod.current_stock);
          
-         let risk = '🟢 Low';
+         let risk = 'Low';
          let riskVal = 0;
-         if (shortage > forecast28d * 0.5) { risk = '🔴 High'; riskVal = 2; }
-         else if (shortage > forecast28d * 0.2) { risk = '🟡 Med'; riskVal = 1; }
+         if (shortage > forecast28d * 0.5) { risk = 'High'; riskVal = 2; }
+         else if (shortage > forecast28d * 0.2) { risk = 'Med'; riskVal = 1; }
 
          // Calculate depletion data
          let depletion = [];
@@ -105,7 +105,7 @@ export default function Forecast() {
       } else {
           setCart([...cart, {
               item_id: prod.item_id,
-              display_name: `${prod.icon} ${prod.category} · Dept ${prod.dept} · #${prod.item_num} · ${prod.store}`,
+              display_name: `${prod.category} · Dept ${prod.dept} · #${prod.item_num} · ${prod.store}`,
               shortage: parseInt(prod.shortage),
               weight: prod.unit_weight_kg,
               size: prod.size,
@@ -122,8 +122,7 @@ export default function Forecast() {
           <>
           <tr className={`cursor-pointer border-b border-slate-100 hover:bg-slate-50 transition ${isExpanded ? 'bg-slate-50' : ''}`} onClick={() => setExpandedId(isExpanded ? null : p.item_id)}>
               <td className="p-3">
-                 <div className="font-bold text-slate-800 flex items-center gap-2">
-                    <span className="text-xl">{p.icon}</span> 
+                 <div className="font-bold text-slate-800">
                     {p.category} · Dept {p.dept} · #{p.item_num} · {p.store}
                  </div>
                  <div className="text-xs text-slate-400 mt-0.5">{p.item_id}</div>
@@ -160,18 +159,6 @@ export default function Forecast() {
                            />
                         </div>
                         <div className="lg:w-1/3 flex flex-col gap-4">
-                            <div className="bg-white p-4 rounded border shadow-sm border-slate-200">
-                               <h4 className="font-bold text-sm text-slate-700 mb-2">Model Accuracy</h4>
-                               <p className="text-sm text-slate-600 leading-relaxed mb-3">
-                                  Model was <strong>{(p.avgConfidencePct||91).toFixed(1)}% accurate</strong> for this item over the past 4 weeks. Shortage triggers a critical risk due to stockout intersecting the forecast within peak windows.
-                               </p>
-                               <div className="text-xs text-slate-400 font-mono space-y-1">
-                                  <div>Week -1: Predicted 44u, Actual 42u</div>
-                                  <div>Week -2: Predicted 51u, Actual 49u</div>
-                                  <div>Week -3: Predicted 38u, Actual 45u</div>
-                                  <div>Week -4: Predicted 47u, Actual 44u</div>
-                               </div>
-                            </div>
                             <div className="bg-slate-100 p-4 rounded border border-slate-200 text-sm text-slate-700">
                                <h4 className="font-bold text-sm text-slate-800 mb-1">Item Dimensions</h4>
                                <p>Weight: <strong>{p.unit_weight_kg} kg</strong> · Size: <strong>{p.size}</strong></p>
@@ -201,7 +188,7 @@ export default function Forecast() {
       <div className="flex gap-2">
            {['All', 'FOODS', 'HOBBIES', 'HOUSEHOLD'].map(cat => (
                <button key={cat} onClick={()=>setActiveCategory(cat)} className={`px-4 py-2 text-sm font-bold rounded-full transition ${activeCategory===cat ? 'bg-[var(--si-primary)] text-white shadow' : 'bg-white border text-slate-600 hover:bg-slate-50'}`}>
-                   {cat === 'All' ? 'All Items' : (cat === 'FOODS' ? '🛒 FOODS' : (cat === 'HOBBIES' ? '🎨 HOBBIES' : '🏠 HOUSEHOLD'))}
+                   {cat === 'All' ? 'All Items' : cat}
                </button>
            ))}
       </div>
@@ -230,7 +217,7 @@ export default function Forecast() {
           <div className="fixed bottom-0 left-0 right-0 p-4 pointer-events-none z-50 flex justify-center">
              <div className="bg-slate-900 text-white rounded-2xl shadow-2xl pointer-events-auto flex items-center justify-between px-6 py-4 w-full max-w-4xl border border-slate-700">
                  <div>
-                    <div className="font-bold text-lg text-slate-100 flex items-center gap-2"><span className="text-2xl">📦</span> Order Cart — {cart.length} items selected</div>
+                    <div className="font-bold text-lg text-slate-100">Order Cart — {cart.length} items selected</div>
                     <div className="text-slate-400 text-sm mt-1 flex gap-3 truncate max-w-xl">
                        {cart.slice(0,3).map(c => <span key={c.item_id} className="bg-slate-800 px-2 py-0.5 rounded">{c.item_id.split('_').slice(0,3).join('_')} ({c.shortage}u)</span>)}
                        {cart.length > 3 && <span>[+ {cart.length - 3} more]</span>}

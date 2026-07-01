@@ -1,0 +1,1066 @@
+{
+  "tasks": [
+    {
+      "taskId": "TASK-0001",
+      "orderId": null,
+      "workerId": "W281",
+      "cartId": "CART-001",
+      "clusterId": "CG-001",
+      "status": "Completed",
+      "assignedAt": "2026-06-23T03:45:37.123Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-05-L3",
+          "x": 508,
+          "y": 253
+        },
+        {
+          "slot_id": "A1A-05-L2",
+          "x": 508,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH",
+      "completedAt": "2026-06-23T04:09:49.713Z"
+    },
+    {
+      "taskId": "TASK-0002",
+      "orderId": null,
+      "workerId": "W033",
+      "cartId": "CART-002",
+      "clusterId": "CG-002",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T03:59:23.017Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1B-01-L3",
+          "x": 128,
+          "y": 443
+        },
+        {
+          "slot_id": "A1B-01-L2",
+          "x": 128,
+          "y": 467
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0003",
+      "orderId": null,
+      "workerId": "W061",
+      "cartId": "CART-003",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:02:18.454Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0004",
+      "orderId": null,
+      "workerId": "W209",
+      "cartId": "CART-003",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:02:24.609Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0005",
+      "orderId": null,
+      "workerId": "W240",
+      "cartId": "CART-003",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:02:52.911Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0006",
+      "orderId": null,
+      "workerId": "W282",
+      "cartId": "CART-003",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:02:53.983Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0007",
+      "orderId": null,
+      "workerId": "W051",
+      "cartId": "CART-003",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:02:55.249Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0008",
+      "orderId": null,
+      "workerId": "W145",
+      "cartId": "CART-003",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:02:57.228Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0009",
+      "orderId": null,
+      "workerId": "W378",
+      "cartId": "CART-003",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:03:00.449Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0010",
+      "orderId": null,
+      "workerId": "W399",
+      "cartId": "CART-003",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:03:03.474Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0011",
+      "orderId": null,
+      "workerId": "W114",
+      "cartId": "CART-004",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:03:27.159Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0012",
+      "orderId": null,
+      "workerId": "W335",
+      "cartId": "CART-004",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:03:27.242Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0013",
+      "orderId": null,
+      "workerId": "W108",
+      "cartId": "CART-004",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:03:27.317Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0014",
+      "orderId": null,
+      "workerId": "W366",
+      "cartId": "CART-004",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:03:27.335Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0015",
+      "orderId": null,
+      "workerId": "W132",
+      "cartId": "CART-004",
+      "clusterId": "CG-003",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:03:27.357Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0016",
+      "orderId": null,
+      "workerId": "W295",
+      "cartId": "CART-005",
+      "clusterId": "CG-004",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T04:03:44.174Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1B-02-L2",
+          "x": 223,
+          "y": 467
+        },
+        {
+          "slot_id": "C1A-01-L5",
+          "x": 128,
+          "y": 705
+        },
+        {
+          "slot_id": "C1A-02-L5",
+          "x": 223,
+          "y": 705
+        },
+        {
+          "slot_id": "C1A-03-L5",
+          "x": 318,
+          "y": 705
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0017",
+      "orderId": null,
+      "workerId": "W084",
+      "cartId": "CART-006",
+      "clusterId": "CG-005",
+      "status": "Assigned",
+      "assignedAt": "2026-06-23T05:00:36.517Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-05-L5",
+          "x": 508,
+          "y": 205
+        },
+        {
+          "slot_id": "A1B-01-L5",
+          "x": 128,
+          "y": 395
+        },
+        {
+          "slot_id": "C1A-04-L5",
+          "x": 413,
+          "y": 705
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0018",
+      "orderId": null,
+      "workerId": "W175",
+      "cartId": "CART-007",
+      "clusterId": "CG-006",
+      "status": "Assigned",
+      "assignedAt": "2026-06-28T11:34:21.227Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1B-02-L5",
+          "x": 223,
+          "y": 395
+        },
+        {
+          "slot_id": "A1B-03-L5",
+          "x": 318,
+          "y": 395
+        },
+        {
+          "slot_id": "A1B-04-L5",
+          "x": 413,
+          "y": 395
+        },
+        {
+          "slot_id": "A1B-05-L5",
+          "x": 508,
+          "y": 395
+        },
+        {
+          "slot_id": "C1A-05-L5",
+          "x": 508,
+          "y": 705
+        },
+        {
+          "slot_id": "C1B-01-L5",
+          "x": 128,
+          "y": 895
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0019",
+      "orderId": null,
+      "workerId": "W310",
+      "cartId": "CART-008",
+      "clusterId": "CG-007",
+      "status": "Assigned",
+      "assignedAt": "2026-06-28T11:34:55.284Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "B1A-02-L5",
+          "x": 853,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-03-L5",
+          "x": 948,
+          "y": 205
+        },
+        {
+          "slot_id": "B1A-04-L5",
+          "x": 1043,
+          "y": 205
+        }
+      ],
+      "sourceZone": "B",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0020",
+      "orderId": null,
+      "workerId": "W343",
+      "cartId": "CART-009",
+      "clusterId": "CG-008",
+      "status": "Assigned",
+      "assignedAt": "2026-06-28T12:02:28.435Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "B1A-05-L5",
+          "x": 1138,
+          "y": 205
+        },
+        {
+          "slot_id": "C1B-02-L5",
+          "x": 223,
+          "y": 895
+        },
+        {
+          "slot_id": "C1B-03-L5",
+          "x": 318,
+          "y": 895
+        },
+        {
+          "slot_id": "C1B-04-L5",
+          "x": 413,
+          "y": 895
+        },
+        {
+          "slot_id": "C1B-05-L5",
+          "x": 508,
+          "y": 895
+        },
+        {
+          "slot_id": "D1A-01-L5",
+          "x": 758,
+          "y": 705
+        },
+        {
+          "slot_id": "D1A-02-L5",
+          "x": 853,
+          "y": 705
+        }
+      ],
+      "sourceZone": "B",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0021",
+      "orderId": null,
+      "workerId": "W094",
+      "cartId": "CART-010",
+      "clusterId": "CG-009",
+      "status": "Assigned",
+      "assignedAt": "2026-06-28T12:03:52.466Z",
+      "estimatedCompletionTime": null,
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1B-02-L3",
+          "x": 223,
+          "y": 443
+        },
+        {
+          "slot_id": "A1B-03-L2",
+          "x": 318,
+          "y": 467
+        }
+      ],
+      "sourceZone": "A",
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0022",
+      "workerId": "W401",
+      "cartId": "CART-011",
+      "clusterId": "CG-010",
+      "status": "Assigned",
+      "assignedAt": "2026-06-28T12:43:00.417Z",
+      "shelfCoordinates": [
+        {
+          "slot_id": "A1A-06-L3",
+          "x": 1210,
+          "y": 294,
+          "item_id": "FOODS_2_044_TX_1_validation"
+        },
+        {
+          "slot_id": "A1A-06-L2",
+          "x": 1210,
+          "y": 326,
+          "item_id": "FOODS_3_288_CA_3_validation"
+        },
+        {
+          "slot_id": "A1B-03-L3",
+          "x": 922,
+          "y": 502,
+          "item_id": "FOODS_2_044_WI_2_validation"
+        },
+        {
+          "slot_id": "A1B-04-L3",
+          "x": 1018,
+          "y": 502,
+          "item_id": "FOODS_2_059_CA_2_validation"
+        },
+        {
+          "slot_id": "A1B-05-L3",
+          "x": 1114,
+          "y": 502,
+          "item_id": "FOODS_2_059_TX_3_validation"
+        },
+        {
+          "slot_id": "A1B-06-L3",
+          "x": 1210,
+          "y": 502,
+          "item_id": "FOODS_2_102_TX_3_validation"
+        },
+        {
+          "slot_id": "A2A-01-L3",
+          "x": 730,
+          "y": 732,
+          "item_id": "FOODS_2_147_CA_3_validation"
+        },
+        {
+          "slot_id": "A2A-02-L3",
+          "x": 826,
+          "y": 732,
+          "item_id": "FOODS_2_380_CA_2_validation"
+        }
+      ],
+      "route": [
+        {
+          "step": 1,
+          "node_id": "RECEIVING_DOCK",
+          "slot_id": "RECEIVING_DOCK",
+          "item_id": null,
+          "x": 60,
+          "y": 650,
+          "type": "start",
+          "cumulative_distance": 0
+        },
+        {
+          "step": 2,
+          "node_id": "A2A-01-L3",
+          "slot_id": "A2A-01-L3",
+          "item_id": "FOODS_2_147_CA_3_validation",
+          "x": 730,
+          "y": 732,
+          "type": "pickup",
+          "cumulative_distance": 675
+        },
+        {
+          "step": 3,
+          "node_id": "A2A-02-L3",
+          "slot_id": "A2A-02-L3",
+          "item_id": "FOODS_2_380_CA_2_validation",
+          "x": 826,
+          "y": 732,
+          "type": "pickup",
+          "cumulative_distance": 771
+        },
+        {
+          "step": 4,
+          "node_id": "A1B-03-L3",
+          "slot_id": "A1B-03-L3",
+          "item_id": "FOODS_2_044_WI_2_validation",
+          "x": 922,
+          "y": 502,
+          "type": "pickup",
+          "cumulative_distance": 1020
+        },
+        {
+          "step": 5,
+          "node_id": "A1B-04-L3",
+          "slot_id": "A1B-04-L3",
+          "item_id": "FOODS_2_059_CA_2_validation",
+          "x": 1018,
+          "y": 502,
+          "type": "pickup",
+          "cumulative_distance": 1116
+        },
+        {
+          "step": 6,
+          "node_id": "A1B-05-L3",
+          "slot_id": "A1B-05-L3",
+          "item_id": "FOODS_2_059_TX_3_validation",
+          "x": 1114,
+          "y": 502,
+          "type": "pickup",
+          "cumulative_distance": 1212
+        },
+        {
+          "step": 7,
+          "node_id": "A1B-06-L3",
+          "slot_id": "A1B-06-L3",
+          "item_id": "FOODS_2_102_TX_3_validation",
+          "x": 1210,
+          "y": 502,
+          "type": "pickup",
+          "cumulative_distance": 1308
+        },
+        {
+          "step": 8,
+          "node_id": "A1A-06-L2",
+          "slot_id": "A1A-06-L2",
+          "item_id": "FOODS_3_288_CA_3_validation",
+          "x": 1210,
+          "y": 326,
+          "type": "pickup",
+          "cumulative_distance": 1484
+        },
+        {
+          "step": 9,
+          "node_id": "A1A-06-L3",
+          "slot_id": "A1A-06-L3",
+          "item_id": "FOODS_2_044_TX_1_validation",
+          "x": 1210,
+          "y": 294,
+          "type": "pickup",
+          "cumulative_distance": 1516
+        },
+        {
+          "step": 10,
+          "node_id": "DISPATCH_DOCK",
+          "slot_id": "DISPATCH_DOCK",
+          "item_id": null,
+          "x": 2340,
+          "y": 650,
+          "type": "end",
+          "cumulative_distance": 2701
+        }
+      ],
+      "totalDistance": 2701,
+      "totalStops": 8,
+      "sourceZone": null,
+      "destinationZone": "DISPATCH"
+    },
+    {
+      "taskId": "TASK-0023",
+      "workerId": "W402",
+      "cartId": "CART-012",
+      "clusterId": "CG-011",
+      "status": "Assigned",
+      "assignedAt": "2026-06-28T13:19:27.749Z",
+      "shelfCoordinates": [
+        {
+          "slot_id": "C1A-01-L3",
+          "x": 730,
+          "y": 1194,
+          "item_id": "FOODS_2_044_CA_4_validation"
+        },
+        {
+          "slot_id": "C1A-02-L3",
+          "x": 826,
+          "y": 1194,
+          "item_id": "FOODS_2_044_TX_2_validation"
+        }
+      ],
+      "route": [
+        {
+          "step": 1,
+          "node_id": "RECEIVING_DOCK",
+          "slot_id": "RECEIVING_DOCK",
+          "item_id": null,
+          "x": 80,
+          "y": 960,
+          "type": "start",
+          "cumulative_distance": 0
+        },
+        {
+          "step": 2,
+          "node_id": "C1A-01-L3",
+          "slot_id": "C1A-01-L3",
+          "item_id": "FOODS_2_044_CA_4_validation",
+          "x": 730,
+          "y": 1194,
+          "type": "pickup",
+          "cumulative_distance": 691
+        },
+        {
+          "step": 3,
+          "node_id": "C1A-02-L3",
+          "slot_id": "C1A-02-L3",
+          "item_id": "FOODS_2_044_TX_2_validation",
+          "x": 826,
+          "y": 1194,
+          "type": "pickup",
+          "cumulative_distance": 787
+        },
+        {
+          "step": 4,
+          "node_id": "DISPATCH_DOCK",
+          "slot_id": "DISPATCH_DOCK",
+          "item_id": null,
+          "x": 3120,
+          "y": 960,
+          "type": "end",
+          "cumulative_distance": 3093
+        }
+      ],
+      "totalDistance": 3093,
+      "totalStops": 2,
+      "sourceZone": null,
+      "destinationZone": "DISPATCH"
+    }
+  ]
+}

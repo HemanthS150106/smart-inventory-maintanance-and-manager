@@ -1,0 +1,373 @@
+{
+  "groups": [
+    {
+      "cart_group_id": "CG-001",
+      "status": "assigned",
+      "cart_id": "CART-001",
+      "worker_id": "W281",
+      "created_at": "2026-06-23T03:42:28.614Z",
+      "items": [
+        {
+          "item_id": "FOODS_3_288_CA_2_validation",
+          "slot_id": "A1A-05-L3",
+          "x": 508,
+          "y": 253
+        },
+        {
+          "item_id": "FOODS_3_288_CA_3_validation",
+          "slot_id": "A1A-05-L2",
+          "x": 508,
+          "y": 277
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-002",
+      "status": "assigned",
+      "cart_id": "CART-002",
+      "worker_id": "W033",
+      "created_at": "2026-06-23T03:59:15.951Z",
+      "items": [
+        {
+          "item_id": "FOODS_3_288_CA_2_validation",
+          "slot_id": "A1B-01-L3",
+          "x": 128,
+          "y": 443
+        },
+        {
+          "item_id": "FOODS_3_288_CA_3_validation",
+          "slot_id": "A1B-01-L2",
+          "x": 128,
+          "y": 467
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-003",
+      "status": "assigned",
+      "cart_id": "CART-004",
+      "worker_id": "W132",
+      "created_at": "2026-06-23T04:02:06.063Z",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_TX_1_validation",
+          "slot_id": "A1A-01-L5",
+          "x": 128,
+          "y": 205
+        },
+        {
+          "item_id": "FOODS_2_044_WI_2_validation",
+          "slot_id": "A1A-02-L5",
+          "x": 223,
+          "y": 205
+        },
+        {
+          "item_id": "FOODS_2_059_CA_3_validation",
+          "slot_id": "A1A-03-L5",
+          "x": 318,
+          "y": 205
+        },
+        {
+          "item_id": "FOODS_3_093_CA_3_validation",
+          "slot_id": "A1A-04-L5",
+          "x": 413,
+          "y": 205
+        },
+        {
+          "item_id": "FOODS_2_147_WI_2_validation",
+          "slot_id": "B1A-01-L5",
+          "x": 758,
+          "y": 205
+        },
+        {
+          "item_id": "FOODS_2_380_WI_1_validation",
+          "slot_id": "B1A-01-L2",
+          "x": 758,
+          "y": 277
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-004",
+      "status": "assigned",
+      "cart_id": "CART-005",
+      "worker_id": "W295",
+      "created_at": "2026-06-23T04:02:06.063Z",
+      "items": [
+        {
+          "item_id": "FOODS_3_288_CA_3_validation",
+          "slot_id": "A1B-02-L2",
+          "x": 223,
+          "y": 467
+        },
+        {
+          "item_id": "FOODS_2_044_CA_4_validation",
+          "slot_id": "C1A-01-L5",
+          "x": 128,
+          "y": 705
+        },
+        {
+          "item_id": "FOODS_2_044_TX_2_validation",
+          "slot_id": "C1A-02-L5",
+          "x": 223,
+          "y": 705
+        },
+        {
+          "item_id": "FOODS_3_150_WI_1_validation",
+          "slot_id": "C1A-03-L5",
+          "x": 318,
+          "y": 705
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-005",
+      "status": "assigned",
+      "cart_id": "CART-006",
+      "worker_id": "W084",
+      "created_at": "2026-06-23T04:58:53.641Z",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_CA_1_validation",
+          "slot_id": "A1A-05-L5",
+          "x": 508,
+          "y": 205
+        },
+        {
+          "item_id": "FOODS_2_059_CA_2_validation",
+          "slot_id": "A1B-01-L5",
+          "x": 128,
+          "y": 395
+        },
+        {
+          "item_id": "FOODS_2_044_CA_4_validation",
+          "slot_id": "C1A-04-L5",
+          "x": 413,
+          "y": 705
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-006",
+      "status": "assigned",
+      "cart_id": "CART-007",
+      "worker_id": "W175",
+      "created_at": "2026-06-28T11:34:13.955Z",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_CA_1_validation",
+          "slot_id": "A1B-02-L5",
+          "x": 223,
+          "y": 395
+        },
+        {
+          "item_id": "FOODS_2_044_CA_3_validation",
+          "slot_id": "A1B-03-L5",
+          "x": 318,
+          "y": 395
+        },
+        {
+          "item_id": "FOODS_2_044_WI_1_validation",
+          "slot_id": "A1B-04-L5",
+          "x": 413,
+          "y": 395
+        },
+        {
+          "item_id": "FOODS_3_296_TX_1_validation",
+          "slot_id": "A1B-05-L5",
+          "x": 508,
+          "y": 395
+        },
+        {
+          "item_id": "FOODS_2_044_CA_4_validation",
+          "slot_id": "C1A-05-L5",
+          "x": 508,
+          "y": 705
+        },
+        {
+          "item_id": "FOODS_2_044_TX_2_validation",
+          "slot_id": "C1B-01-L5",
+          "x": 128,
+          "y": 895
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-007",
+      "status": "assigned",
+      "cart_id": "CART-008",
+      "worker_id": "W310",
+      "created_at": "2026-06-28T11:34:13.955Z",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_CA_2_validation",
+          "slot_id": "B1A-02-L5",
+          "x": 853,
+          "y": 205
+        },
+        {
+          "item_id": "HOBBIES_1_202_TX_1_validation",
+          "slot_id": "B1A-03-L5",
+          "x": 948,
+          "y": 205
+        },
+        {
+          "item_id": "HOBBIES_2_071_TX_3_validation",
+          "slot_id": "B1A-04-L5",
+          "x": 1043,
+          "y": 205
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-008",
+      "status": "assigned",
+      "cart_id": "CART-009",
+      "worker_id": "W343",
+      "created_at": "2026-06-28T12:02:15.132Z",
+      "items": [
+        {
+          "item_id": "FOODS_3_142_TX_3_validation",
+          "slot_id": "B1A-05-L5",
+          "x": 1138,
+          "y": 205
+        },
+        {
+          "item_id": "FOODS_2_044_TX_3_validation",
+          "slot_id": "C1B-02-L5",
+          "x": 223,
+          "y": 895
+        },
+        {
+          "item_id": "FOODS_2_380_CA_3_validation",
+          "slot_id": "C1B-03-L5",
+          "x": 318,
+          "y": 895
+        },
+        {
+          "item_id": "FOODS_3_296_CA_1_validation",
+          "slot_id": "C1B-04-L5",
+          "x": 413,
+          "y": 895
+        },
+        {
+          "item_id": "FOODS_3_764_CA_2_validation",
+          "slot_id": "C1B-05-L5",
+          "x": 508,
+          "y": 895
+        },
+        {
+          "item_id": "FOODS_2_044_WI_2_validation",
+          "slot_id": "D1A-01-L5",
+          "x": 758,
+          "y": 705
+        },
+        {
+          "item_id": "FOODS_3_093_CA_1_validation",
+          "slot_id": "D1A-02-L5",
+          "x": 853,
+          "y": 705
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-009",
+      "status": "assigned",
+      "cart_id": "CART-010",
+      "worker_id": "W094",
+      "created_at": "2026-06-28T12:03:38.093Z",
+      "items": [
+        {
+          "item_id": "FOODS_3_288_CA_2_validation",
+          "slot_id": "A1B-02-L3",
+          "x": 223,
+          "y": 443
+        },
+        {
+          "item_id": "FOODS_3_288_CA_3_validation",
+          "slot_id": "A1B-03-L2",
+          "x": 318,
+          "y": 467
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-010",
+      "status": "assigned",
+      "cart_id": "CART-011",
+      "worker_id": "W401",
+      "created_at": "2026-06-28T12:42:48.942Z",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_TX_1_validation",
+          "slot_id": "A1A-06-L3",
+          "x": 1210,
+          "y": 294
+        },
+        {
+          "item_id": "FOODS_3_288_CA_3_validation",
+          "slot_id": "A1A-06-L2",
+          "x": 1210,
+          "y": 326
+        },
+        {
+          "item_id": "FOODS_2_044_WI_2_validation",
+          "slot_id": "A1B-03-L3",
+          "x": 922,
+          "y": 502
+        },
+        {
+          "item_id": "FOODS_2_059_CA_2_validation",
+          "slot_id": "A1B-04-L3",
+          "x": 1018,
+          "y": 502
+        },
+        {
+          "item_id": "FOODS_2_059_TX_3_validation",
+          "slot_id": "A1B-05-L3",
+          "x": 1114,
+          "y": 502
+        },
+        {
+          "item_id": "FOODS_2_102_TX_3_validation",
+          "slot_id": "A1B-06-L3",
+          "x": 1210,
+          "y": 502
+        },
+        {
+          "item_id": "FOODS_2_147_CA_3_validation",
+          "slot_id": "A2A-01-L3",
+          "x": 730,
+          "y": 732
+        },
+        {
+          "item_id": "FOODS_2_380_CA_2_validation",
+          "slot_id": "A2A-02-L3",
+          "x": 826,
+          "y": 732
+        }
+      ]
+    },
+    {
+      "cart_group_id": "CG-011",
+      "status": "assigned",
+      "cart_id": "CART-012",
+      "worker_id": "W402",
+      "created_at": "2026-06-28T12:42:48.942Z",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_CA_4_validation",
+          "slot_id": "C1A-01-L3",
+          "x": 730,
+          "y": 1194
+        },
+        {
+          "item_id": "FOODS_2_044_TX_2_validation",
+          "slot_id": "C1A-02-L3",
+          "x": 826,
+          "y": 1194
+        }
+      ]
+    }
+  ]
+}

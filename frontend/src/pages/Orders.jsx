@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../auth/AuthProvider.jsx';
 import { useNavigate } from 'react-router-dom';
 
 function getLevel(wt) {
@@ -11,6 +12,7 @@ function getLevel(wt) {
 
 export default function Orders() {
     const navigate = useNavigate();
+    const auth = useContext(AuthContext);
     const [activeTab, setActiveTab] = useState('review'); // review, active
     const [cart, setCart] = useState([]);
     
@@ -23,6 +25,24 @@ export default function Orders() {
     const [arrivalModalOpen, setArrivalModalOpen] = useState(false);
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [arrivedItems, setArrivedItems] = useState(new Set()); // set of item_ids for the modal
+    const [arrivalSearch, setArrivalSearch] = useState('');
+
+    const closeArrivalModal = () => {
+        setArrivalModalOpen(false);
+        setArrivalSearch('');
+        setSelectedOrder(null);
+    };
+
+    const filteredOrderItems = (selectedOrder?.items || []).filter(item => {
+        if (!arrivalSearch.trim()) return true;
+        const q = arrivalSearch.toLowerCase();
+        return (
+            item.item_id?.toLowerCase().includes(q) ||
+            item.category?.toLowerCase().includes(q) ||
+            item.size?.toLowerCase().includes(q) ||
+            item.display_name?.toLowerCase().includes(q)
+        );
+    });
 
     useEffect(() => {
         try {
@@ -84,11 +104,15 @@ export default function Orders() {
                 items: itemsToOrder
             };
 
-            const res = await fetch('http://localhost:3001/api/orders', {
+            const res = await (auth && auth.authFetch ? auth.authFetch('/api/orders', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
-            });
+            }) : fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }));
 
             if (res.ok) {
                 setCart([]);
@@ -96,7 +120,9 @@ export default function Orders() {
                 setActiveTab('active');
                 fetchActiveOrders();
             } else {
-                alert('Failed to place order.');
+                let text = ''
+                try { text = await res.text() } catch(e) {}
+                alert(`Failed to place order. ${res.status} ${res.statusText} ${text}`)
             }
         } catch (e) {
             alert('Server unreachable');
@@ -125,16 +151,22 @@ export default function Orders() {
                 order_id: selectedOrder.order_id,
                 arrived_item_ids: Array.from(arrivedItems)
             };
-            const res = await fetch('http://localhost:3001/api/arrive', {
+            const res = await (auth && auth.authFetch ? auth.authFetch('/api/arrive', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
-            });
+            }) : fetch('/api/arrive', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }));
             if (res.ok) {
-                setArrivalModalOpen(false);
+                closeArrivalModal();
                 navigate('/allocation');
             } else {
-                alert('Failed to mark arrived.');
+                let text = ''
+                try { text = await res.text() } catch(e) {}
+                alert(`Failed to mark arrived. ${res.status} ${res.statusText} ${text}`)
             }
         } catch(e) {
             alert('Server unreachable');
@@ -146,7 +178,6 @@ export default function Orders() {
         <div className="space-y-6 pb-20 max-w-5xl mx-auto">
             <header className="mb-8">
                 <h1 className="text-3xl font-bold text-slate-900">Orders Management</h1>
-                <p className="text-slate-500 mt-1">Review pending orders and log physical arrivals to slot them.</p>
             </header>
 
             <div className="flex border-b border-slate-200 gap-8 mb-6">
@@ -295,35 +326,101 @@ export default function Orders() {
                     <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full flex flex-col max-h-[90vh]">
                         <div className="p-5 border-b font-bold text-lg flex justify-between items-center bg-slate-50 rounded-t-xl">
                             <div>MARK ITEMS AS ARRIVED — <span className="font-mono text-blue-600">{selectedOrder.order_id}</span></div>
-                            <button onClick={()=>setArrivalModalOpen(false)} className="text-slate-400 font-bold text-xl hover:text-slate-700">×</button>
+                            <button onClick={closeArrivalModal} className="text-slate-400 font-bold text-xl hover:text-slate-700">×</button>
                         </div>
+                        
+                        {/* Search Bar */}
+                        <div style={{
+                            padding: '12px 16px',
+                            borderBottom: '1px solid #e2e8f0',
+                            background: '#f8fafc'
+                        }}>
+                            <div style={{ position: 'relative' }}>
+                                <span style={{
+                                    position: 'absolute', left: '12px',
+                                    top: '50%', transform: 'translateY(-50%)',
+                                    fontSize: '16px', pointerEvents: 'none'
+                                }}>
+                                    🔍
+                                </span>
+                                <input
+                                    type="text"
+                                    placeholder="Search by item ID, category, size..."
+                                    value={arrivalSearch}
+                                    onChange={e => setArrivalSearch(e.target.value)}
+                                    style={{
+                                        width: '100%',
+                                        padding: '10px 12px 10px 38px',
+                                        border: '1.5px solid #e2e8f0',
+                                        borderRadius: '8px',
+                                        fontSize: '14px',
+                                        boxSizing: 'border-box',
+                                        outline: 'none',
+                                        background: 'white'
+                                    }}
+                                    onFocus={e => e.target.style.borderColor = '#3b82f6'}
+                                    onBlur={e  => e.target.style.borderColor = '#e2e8f0'}
+                                    autoFocus
+                                />
+                                {arrivalSearch && (
+                                    <button
+                                        onClick={() => setArrivalSearch('')}
+                                        style={{
+                                            position: 'absolute', right: '10px',
+                                            top: '50%', transform: 'translateY(-50%)',
+                                            background: 'none', border: 'none',
+                                            cursor: 'pointer', fontSize: '16px',
+                                            color: '#94a3b8', padding: '4px'
+                                        }}
+                                    >
+                                        ✕
+                                    </button>
+                                )}
+                            </div>
+                            {arrivalSearch && (
+                                <p style={{
+                                    margin: '8px 0 0', fontSize: '12px', color: '#64748b'
+                                }}>
+                                    {filteredOrderItems.length} of {selectedOrder?.items?.length || 0} items shown
+                                </p>
+                            )}
+                        </div>
+
                         <div className="p-5 overflow-y-auto flex-1">
                             <p className="text-sm text-slate-500 font-bold mb-4">Select which items have physically arrived to the warehouse dock:</p>
                             <div className="space-y-3">
-                                {selectedOrder.items.map(item => {
-                                    const arrived = arrivedItems.has(item.item_id);
-                                    const disabled = item.arrived; // previously marked
-                                    return (
-                                        <label key={item.item_id} className={`flex items-start gap-3 p-3 rounded border cursor-pointer transition ${arrived?'bg-blue-50 border-blue-200':'hover:bg-slate-50'} ${disabled?'opacity-50 cursor-not-allowed':''}`}>
-                                            <input 
-                                                type="checkbox" 
-                                                checked={arrived}
-                                                onChange={() => !disabled && toggleArrived(item.item_id)}
-                                                disabled={disabled}
-                                                className="w-5 h-5 mt-0.5 rounded border-slate-300 text-blue-600"
-                                            />
-                                            <div className="flex-1">
-                                                <div className="font-bold text-slate-800">{item.item_id}</div>
-                                                <div className="text-xs text-slate-500">{item.qty_ordered} units expected</div>
-                                                {disabled && <div className="text-[10px] uppercase font-bold text-green-600 mt-1">ALREADY SLOTTED</div>}
-                                            </div>
-                                        </label>
-                                    )
-                                })}
+                                {filteredOrderItems.length === 0 ? (
+                                    <div style={{
+                                        padding: '32px', textAlign: 'center', color: '#94a3b8'
+                                    }}>
+                                        <p>No items match "{arrivalSearch}"</p>
+                                    </div>
+                                ) : (
+                                    filteredOrderItems.map(item => {
+                                        const arrived = arrivedItems.has(item.item_id);
+                                        const disabled = item.arrived; // previously marked
+                                        return (
+                                            <label key={item.item_id} className={`flex items-start gap-3 p-3 rounded border cursor-pointer transition ${arrived?'bg-blue-50 border-blue-200':'hover:bg-slate-50'} ${disabled?'opacity-50 cursor-not-allowed':''}`}>
+                                                <input 
+                                                    type="checkbox" 
+                                                    checked={arrived}
+                                                    onChange={() => !disabled && toggleArrived(item.item_id)}
+                                                    disabled={disabled}
+                                                    className="w-5 h-5 mt-0.5 rounded border-slate-300 text-blue-600"
+                                                />
+                                                <div className="flex-1">
+                                                    <div className="font-bold text-slate-800">{item.item_id}</div>
+                                                    <div className="text-xs text-slate-500">{item.qty_ordered} units expected</div>
+                                                    {disabled && <div className="text-[10px] uppercase font-bold text-green-600 mt-1">ALREADY SLOTTED</div>}
+                                                </div>
+                                            </label>
+                                        )
+                                    })
+                                )}
                             </div>
                         </div>
                         <div className="p-5 border-t bg-slate-50 flex justify-end gap-3 rounded-b-xl">
-                            <button onClick={()=>setArrivalModalOpen(false)} className="px-4 py-2 text-slate-600 font-bold rounded hover:bg-slate-200">Cancel</button>
+                            <button onClick={closeArrivalModal} className="px-4 py-2 text-slate-600 font-bold rounded hover:bg-slate-200">Cancel</button>
                             <button 
                                 onClick={confirmArrival}
                                 disabled={isSubmitting || arrivedItems.size === 0}

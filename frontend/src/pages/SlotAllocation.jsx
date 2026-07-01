@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '../auth/AuthProvider.jsx';
+import WarehouseSVGViewer from '../components/WarehouseSVGViewer.jsx';
 
 export default function SlotAllocation() {
+  const auth = useContext(AuthContext);
   const [batches, setBatches] = useState([]);
   const [selectedBatchId, setSelectedBatchId] = useState(null);
   const [viewMode, setViewMode] = useState('allocated'); // 'empty', 'allocated', 'batch'
@@ -92,19 +95,30 @@ export default function SlotAllocation() {
   const resetWarehouse = async () => {
     const confirmed = window.confirm("This will clear all orders and reset the warehouse. Are you sure?");
     if (!confirmed) return;
+    if (!auth?.token) {
+        alert('You must be logged in to reset the warehouse.');
+        return;
+    }
     try {
-        const res = await fetch('http://localhost:3001/api/reset-warehouse', { method: 'POST' });
-        if (!res.ok) { alert('Reset failed'); return; }
-        
+        const res = await auth.authFetch('/api/reset-warehouse', { method: 'POST' });
+        if (!res.ok) {
+            let text = '';
+            try { text = await res.text(); } catch (err) {}
+            alert(`Reset failed: ${res.status} ${res.statusText}${text ? ' - ' + text : ''}`);
+            return;
+        }
+
         // Force reload the SVG with cache-busting
-        fetchSVG('allocated'); // reuse existing loadSVG function with timestamp
-        
+        fetchSVG('allocated');
+
         // Reset all UI state
         setBatches([]);
         setSelectedBatchId(null);
         setViewMode('empty');
         fetchData();
-    } catch(e) { }
+    } catch(e) {
+        alert(`Reset failed: ${e.message || 'Network error'}`);
+    }
   };
 
   const selectedBatch = batches.find(b => b.batch_id === selectedBatchId);
@@ -162,12 +176,11 @@ export default function SlotAllocation() {
                       <button onClick={() => setViewMode('batch')} className={`px-3 py-1 text-sm font-semibold rounded ${viewMode==='batch'?'bg-white shadow text-indigo-600':'text-slate-500'}`} disabled={!selectedBatch}>Batch View</button>
                     </div>
                   </div>
-                  <div className="p-4 overflow-auto relative">
-                     {/* Inject the raw SVG string safely allowing dynamic CSS overrides to work natively without cross-origin iframe locks */}
-                     <div 
-                        id="svg-viewer-allocated"
-                        className="w-full min-w-[1000px] h-auto pointer-events-none transition-opacity duration-300"
-                        dangerouslySetInnerHTML={{ __html: svgContent }} 
+                  <div className="p-4 relative">
+                     <WarehouseSVGViewer
+                        svgContent={svgContent}
+                        mode={viewMode}
+                        containerId="svg-viewer-allocated"
                      />
                   </div>
               </div>
