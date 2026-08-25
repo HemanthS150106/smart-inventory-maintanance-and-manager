@@ -1,0 +1,23 @@
+[
+  {
+    "email": "admin@company.com",
+    "password": "Password123!",
+    "name": "Admin",
+    "role": "admin",
+    "login_id": "admin"
+  },
+  {
+    "email": "monitor@company.com",
+    "password": "monitor123",
+    "name": "Warehouse Monitor",
+    "role": "monitor",
+    "login_id": "monitor"
+  },
+  {
+    "email": "simulation@company.com",
+    "password": "simulation123",
+    "name": "Simulation Specialist",
+    "role": "simulation",
+    "login_id": "simulation"
+  }
+]

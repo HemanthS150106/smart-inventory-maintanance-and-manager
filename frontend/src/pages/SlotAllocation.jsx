@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '../auth/AuthProvider.jsx';
+import WarehouseSVGViewer from '../components/WarehouseSVGViewer.jsx';
 
 export default function SlotAllocation() {
+  const auth = useContext(AuthContext);
   const [batches, setBatches] = useState([]);
   const [selectedBatchId, setSelectedBatchId] = useState(null);
   const [viewMode, setViewMode] = useState('allocated'); // 'empty', 'allocated', 'batch'
@@ -92,26 +95,37 @@ export default function SlotAllocation() {
   const resetWarehouse = async () => {
     const confirmed = window.confirm("This will clear all orders and reset the warehouse. Are you sure?");
     if (!confirmed) return;
+    if (!auth?.token) {
+        alert('You must be logged in to reset the warehouse.');
+        return;
+    }
     try {
-        const res = await fetch('http://localhost:3001/api/reset-warehouse', { method: 'POST' });
-        if (!res.ok) { alert('Reset failed'); return; }
-        
+        const res = await auth.authFetch('/api/reset-warehouse', { method: 'POST' });
+        if (!res.ok) {
+            let text = '';
+            try { text = await res.text(); } catch (err) {}
+            alert(`Reset failed: ${res.status} ${res.statusText}${text ? ' - ' + text : ''}`);
+            return;
+        }
+
         // Force reload the SVG with cache-busting
-        fetchSVG('allocated'); // reuse existing loadSVG function with timestamp
-        
+        fetchSVG('allocated');
+
         // Reset all UI state
         setBatches([]);
         setSelectedBatchId(null);
         setViewMode('empty');
         fetchData();
-    } catch(e) { }
+    } catch(e) {
+        alert(`Reset failed: ${e.message || 'Network error'}`);
+    }
   };
 
   const selectedBatch = batches.find(b => b.batch_id === selectedBatchId);
   const totalAllocated = batches.reduce((acc, b) => acc + b.slots_allocated.length, 0);
 
   const getDemandColor = (demand) => {
-    if (demand >= 600) return 'bg-red-100 text-red-800';
+    if (demand >= 600) return 'bg-[#FFF7E6] text-[#B7791F] border border-[#E8C77B]';
     if (demand >= 300) return 'bg-yellow-100 text-yellow-800';
     return 'bg-green-100 text-green-800';
   };
@@ -140,7 +154,7 @@ export default function SlotAllocation() {
         <div className="flex gap-4 mt-4 md:mt-0">
             <button 
                 onClick={resetWarehouse} 
-                className="px-4 py-2 border border-red-200 text-red-600 hover:bg-red-50 rounded font-semibold transition"
+                className="px-4 py-2 border border-[#E8C77B] text-[#B7791F] hover:bg-[#FFF7E6] rounded font-semibold transition"
             >
                 RESET WAREHOUSE
             </button>
@@ -162,12 +176,11 @@ export default function SlotAllocation() {
                       <button onClick={() => setViewMode('batch')} className={`px-3 py-1 text-sm font-semibold rounded ${viewMode==='batch'?'bg-white shadow text-indigo-600':'text-slate-500'}`} disabled={!selectedBatch}>Batch View</button>
                     </div>
                   </div>
-                  <div className="p-4 overflow-auto relative">
-                     {/* Inject the raw SVG string safely allowing dynamic CSS overrides to work natively without cross-origin iframe locks */}
-                     <div 
-                        id="svg-viewer-allocated"
-                        className="w-full min-w-[1000px] h-auto pointer-events-none transition-opacity duration-300"
-                        dangerouslySetInnerHTML={{ __html: svgContent }} 
+                  <div className="p-4 relative">
+                     <WarehouseSVGViewer
+                        svgContent={svgContent}
+                        mode={viewMode}
+                        containerId="svg-viewer-allocated"
                      />
                   </div>
               </div>
@@ -201,7 +214,7 @@ export default function SlotAllocation() {
                                       <span className="text-slate-500">{uTotal}/{mSlots} slots ({pct}%)</span>
                                   </div>
                                   <div className="w-full bg-slate-100 h-3 rounded overflow-hidden">
-                                      <div className={`h-full ${pct > 80 ? 'bg-red-500' : 'bg-slate-700'}`} style={{width:`${pct}%`}}></div>
+                                      <div className={`h-full ${pct > 80 ? 'bg-[#B7791F]' : 'bg-slate-700'}`} style={{width:`${pct}%`}}></div>
                                   </div>
                                   <div className="flex gap-4 mt-1 text-xs text-slate-400 font-mono">
                                       {['L5','L4','L3','L2','L1'].map(lvl => (
@@ -230,7 +243,7 @@ export default function SlotAllocation() {
                           <div 
                               key={b.batch_id}
                               onClick={() => { setSelectedBatchId(b.batch_id); setViewMode('batch'); }}
-                              className={`p-3 rounded border cursor-pointer transition ${selectedBatchId === b.batch_id ? 'border-indigo-500 bg-indigo-50' : 'border-slate-200 hover:border-indigo-300 hover:bg-slate-50'}`}
+                              className={`p-3 rounded border cursor-pointer transition ${selectedBatchId === b.batch_id ? 'border-indigo-500 bg-[#F4F6F8]' : 'border-slate-200 hover:border-indigo-300 hover:bg-slate-50'}`}
                           >
                               <div className="flex justify-between items-center font-bold text-slate-800">
                                   <span>Arrival #{b.global_arrival_id || b.batch_id} — <span className="font-mono text-xs">{b.order_id || 'ORD-SYNC'}</span></span>
@@ -244,7 +257,7 @@ export default function SlotAllocation() {
               {/* Selected Batch Manifest */}
               {selectedBatch && (
               <div className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden flex flex-col flex-1">
-                  <div className="bg-indigo-50 px-4 py-3 border-b border-indigo-100 flex justify-between items-center">
+                  <div className="bg-[#F4F6F8] px-4 py-3 border-b border-indigo-100 flex justify-between items-center">
                     <h2 className="font-bold text-indigo-900 text-sm">Arrival #{selectedBatch.batch_id} Items</h2>
                   </div>
                   <div className="overflow-x-auto overflow-y-auto max-h-[500px]">

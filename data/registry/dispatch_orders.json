@@ -1,0 +1,112 @@
+{
+  "dispatch_orders": [
+    {
+      "dispatch_order_id": "DO-001",
+      "created_at": "2026-08-25T13:49:44.757Z",
+      "status": "assigned",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_TX_1_validation",
+          "qty_needed": 1,
+          "slot_id": "A1A-01-L5",
+          "slot_x": 710,
+          "slot_y": 200,
+          "picked": false
+        }
+      ],
+      "assigned_worker_id": "W109",
+      "assigned_cart_id": "CART-009",
+      "pick_task_id": "PICK-0049"
+    },
+    {
+      "dispatch_order_id": "DO-002",
+      "created_at": "2026-08-25T13:49:47.961Z",
+      "status": "assigned",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_TX_1_validation",
+          "qty_needed": 1,
+          "slot_id": "A1A-01-L5",
+          "slot_x": 710,
+          "slot_y": 200,
+          "picked": false
+        }
+      ],
+      "assigned_worker_id": "W119",
+      "assigned_cart_id": "CART-010",
+      "pick_task_id": "PICK-0050"
+    },
+    {
+      "dispatch_order_id": "DO-003",
+      "created_at": "2026-08-25T13:49:51.242Z",
+      "status": "pending",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_TX_1_validation",
+          "qty_needed": 1,
+          "slot_id": "A1A-01-L5",
+          "slot_x": 710,
+          "slot_y": 200,
+          "picked": false
+        }
+      ],
+      "assigned_worker_id": null,
+      "assigned_cart_id": null,
+      "pick_task_id": null
+    },
+    {
+      "dispatch_order_id": "DO-004",
+      "created_at": "2026-08-25T13:49:54.663Z",
+      "status": "pending",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_TX_1_validation",
+          "qty_needed": 1,
+          "slot_id": "A1A-01-L5",
+          "slot_x": 710,
+          "slot_y": 200,
+          "picked": false
+        }
+      ],
+      "assigned_worker_id": null,
+      "assigned_cart_id": null,
+      "pick_task_id": null
+    },
+    {
+      "dispatch_order_id": "DO-005",
+      "created_at": "2026-08-25T13:50:05.727Z",
+      "status": "pending",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_TX_1_validation",
+          "qty_needed": 1,
+          "slot_id": "A1A-01-L5",
+          "slot_x": 710,
+          "slot_y": 200,
+          "picked": false
+        }
+      ],
+      "assigned_worker_id": null,
+      "assigned_cart_id": null,
+      "pick_task_id": null
+    },
+    {
+      "dispatch_order_id": "DO-006",
+      "created_at": "2026-08-25T13:50:09.632Z",
+      "status": "pending",
+      "items": [
+        {
+          "item_id": "FOODS_2_044_TX_1_validation",
+          "qty_needed": 1,
+          "slot_id": "A1A-01-L5",
+          "slot_x": 710,
+          "slot_y": 200,
+          "picked": false
+        }
+      ],
+      "assigned_worker_id": null,
+      "assigned_cart_id": null,
+      "pick_task_id": null
+    }
+  ]
+}

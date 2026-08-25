@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../auth/AuthProvider.jsx'
 
 function navLinkClass({ isActive }) {
   return [
@@ -10,6 +12,7 @@ function navLinkClass({ isActive }) {
 }
 
 export default function Navbar() {
+  const { isAuthenticated, logout } = useContext(AuthContext)
   return (
     <header className="si-nav">
       <nav
@@ -24,27 +27,52 @@ export default function Navbar() {
             Forecasting
           </span>
         </div>
-        <ul className="flex items-center gap-8">
+        <ul className="flex flex-wrap items-center gap-4 sm:gap-6">
           <li>
             <NavLink to="/home" end className={navLinkClass}>
               Dashboard
             </NavLink>
           </li>
           <li>
-            <NavLink to="/forecast" className={navLinkClass}>
+            <NavLink to="/demand" className={navLinkClass}>
               Demand Forecast
             </NavLink>
           </li>
           <li>
-            <NavLink to="/orders" className={navLinkClass}>
-              Orders
+            <NavLink to="/inbound" className={navLinkClass}>
+              Inbound Orders
             </NavLink>
           </li>
           <li>
-            <NavLink to="/allocation" className={navLinkClass}>
-              Slot Allocation
+            <NavLink to="/outbound" className={navLinkClass}>
+              Outbound Orders
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/warehouse" className={navLinkClass}>
+              Warehouse
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/cart-ops" className={navLinkClass}>
+              Operations
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/route-viewer" className={navLinkClass}>
+              Route Viewer
+            </NavLink>
+          </li>
+          {isAuthenticated && (
+            <li>
+              <button
+                className="si-btn si-btn--ghost"
+                onClick={() => { logout(); window.location.href = '/' }}
+              >
+                Sign out
+              </button>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

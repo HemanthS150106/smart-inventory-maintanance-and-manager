@@ -1,12 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 @import 'tailwindcss';
 
 @import './styles/theme.css';
 @import './styles/components.css';
 
+:root {
+  --bg:           #F4F6F8;
+  --surface:      #FFFFFF;
+  --text-primary: #17202A;
+  --text-secondary: #667085;
+  --blue-primary: #1E3A5F;
+  --blue-hover:   #162D4A;
+  --accent:       #2F6B8A;
+  --success:      #2E7D5B;
+  --warning:      #B7791F;
+  --danger:       #C94A4A;
+  --border:       #D9E0E7;
+  --dark-panel:   #172532;
+  --sidebar-bg:   #172532;
+  --sidebar-text: #A8B5BF;
+  --sidebar-active: #2F6B8A;
+
+  --font-primary: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-primary);
+}
+
 body {
   margin: 0;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
 }
 
 #root {
   min-height: 100vh;
+}
+
+/* Monospace for technical identifiers */
+.mono, .sku, .order-id, .cart-id, .worker-id,
+.slot-id, .task-id, .timestamp, .distance {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875em;
+}
+
+/* ── Loading Animations ────────────────────────────────────── */
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Page loader — shown during React.lazy chunk downloads */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  z-index: 9999;
+}
+
+.page-loader-inner {
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.page-loader-spinner {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 18px;
+  border: 4px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.page-loader-text {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+/* Skeleton shimmer placeholder */
+.skeleton-line {
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Page fade-in transition */
+.page-fade-in {
+  animation: fadeIn 0.35s ease-out;
 }

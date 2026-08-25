@@ -2,9 +2,9 @@ import Card from './Card.jsx'
 
 const severityStyles = {
   critical: {
-    bar: 'bg-red-600',
-    badge: 'bg-red-50 text-red-800 ring-red-200',
-    border: 'border-l-red-600',
+    bar: 'bg-[#B7791F]',
+    badge: 'bg-[#FFF7E6] text-[#B7791F] ring-[#E8C77B]',
+    border: 'border-l-[#B7791F]',
   },
   high: {
     bar: 'bg-amber-600',

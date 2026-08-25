@@ -2,8 +2,8 @@ import Card from './Card.jsx'
 
 const riskStyles = {
   critical: {
-    border: 'border-l-red-600',
-    badge: 'bg-red-50 text-red-800 ring-red-200',
+    border: 'border-l-[#B7791F]',
+    badge: 'bg-[#FFF7E6] text-[#B7791F] ring-[#E8C77B]',
     label: 'Critical',
   },
   high: {
@@ -59,15 +59,7 @@ export default function InsightCard({
 
       <ul className="mt-3 space-y-2 text-sm text-slate-600">
         {criticalMessage ? (
-          <li className="font-medium text-red-700">{criticalMessage}</li>
-        ) : null}
-        {warningReorder ? (
-          <li className="text-amber-800">{warningReorder}</li>
-        ) : null}
-        {restockMessage ? (
-          <li className="font-medium text-[var(--si-primary)]">
-            {restockMessage}
-          </li>
+          <li className="font-medium text-[#B7791F]">{criticalMessage}</li>
         ) : null}
         {hasForecast ? (
           <li className="text-slate-500">

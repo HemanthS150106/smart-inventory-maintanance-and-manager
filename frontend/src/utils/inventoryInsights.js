@@ -84,6 +84,7 @@ function buildOneInsight(inv, fr, windowDates) {
     leadRaw !== undefined && leadRaw !== '' && !Number.isNaN(Number(leadRaw))
       ? Number(leadRaw)
       : 7
+  const zoneInfo = String(inv.store_id ?? inv.sku_id ?? '').trim()
 
   if (Number.isNaN(stock)) return null
 
@@ -102,9 +103,12 @@ function buildOneInsight(inv, fr, windowDates) {
     if (windowDates.has(d)) sum28 += v
   }
 
-  const avgDailyDemand = nDays > 0 ? totalForecast / nDays : 0
+  const avgDailyDemand = windowDates.size > 0 ? sum28 / windowDates.size : 0
   const daysRemaining =
     avgDailyDemand > 0 ? stock / avgDailyDemand : null
+
+  const daysShort =
+    daysRemaining == null ? null : Math.max(0, leadTimeDays - daysRemaining)
 
   const belowReorder =
     !Number.isNaN(reorderPoint) && stock < reorderPoint
@@ -113,6 +117,14 @@ function buildOneInsight(inv, fr, windowDates) {
     daysRemaining !== null &&
     daysRemaining < leadTimeDays &&
     avgDailyDemand > 0
+
+  const reorderQuantity =
+    !Number.isNaN(reorderPoint) && reorderPoint > stock
+      ? Math.max(Math.round(reorderPoint - stock), 0)
+      : 0
+
+  const stockoutDate = computeStockoutDate(stock, fr)
+  const lastForecastTimestamp = computeLastForecastDate(fr)
 
   /** @type {StockoutRisk} */
   let stockoutRisk = 'low'
@@ -123,6 +135,13 @@ function buildOneInsight(inv, fr, windowDates) {
   } else if (forecastExceedsStock) {
     stockoutRisk = 'medium'
   }
+
+  const autoReplenishEligible =
+    stockoutRisk === 'critical' &&
+    daysRemaining !== null &&
+    leadTimeDays != null &&
+    daysRemaining < leadTimeDays &&
+    reorderQuantity > 0
 
   let headlineDays
   if (stock <= 0) {
@@ -146,15 +165,27 @@ function buildOneInsight(inv, fr, windowDates) {
     ? `Critical: projected cover (${daysRemaining != null ? daysRemaining.toFixed(1) : '—'} days) is shorter than lead time (${leadTimeDays} days).`
     : null
 
+  const statusLabel = stock <= 0
+    ? 'Stockout'
+    : criticalLeadTime
+      ? 'Critical replenishment'
+      : belowReorder
+        ? 'Reorder soon'
+        : forecastExceedsStock
+          ? 'Monitor inventory'
+          : 'Stable'
+
   return {
     sku,
     productName,
     currentStock: stock,
     reorderPoint: Number.isNaN(reorderPoint) ? null : reorderPoint,
+    reorderQuantity,
     safetyStock: Number.isNaN(safetyStock) ? null : safetyStock,
     leadTimeDays,
     avgDailyDemand,
     daysRemaining,
+    daysShort,
     sumForecast28d: sum28,
     stockoutRisk,
     belowReorder,
@@ -164,6 +195,56 @@ function buildOneInsight(inv, fr, windowDates) {
     restockMessage,
     warningReorder,
     criticalMessage,
+    zoneInfo,
+    stockoutDate,
+    lastForecastTimestamp,
+    statusLabel,
+    autoReplenishEligible,
     hasForecast: fr.length > 0,
   }
+}
+
+/**
+ * @param {number} stock
+ * @param {Record<string, string>[]} fr
+ */
+function computeStockoutDate(stock, fr) {
+  if (stock <= 0) return null
+
+  const dailyByDate = new Map()
+  for (const row of fr) {
+    const date = String(row.date ?? '').trim()
+    if (!date) continue
+    const forecast = Number(row.forecast)
+    if (Number.isNaN(forecast)) continue
+    dailyByDate.set(date, (dailyByDate.get(date) || 0) + forecast)
+  }
+
+  const dates = [...dailyByDate.keys()]
+    .filter((d) => Boolean(d))
+    .sort((a, b) => new Date(a) - new Date(b))
+
+  let remaining = stock
+  for (const date of dates) {
+    remaining -= dailyByDate.get(date) ?? 0
+    if (remaining <= 0) {
+      return date
+    }
+  }
+  return null
+}
+
+/**
+ * @param {Record<string, string>[]} fr
+ */
+function computeLastForecastDate(fr) {
+  let latest = null
+  for (const row of fr) {
+    const date = String(row.date ?? '').trim()
+    if (!date) continue
+    const parsed = new Date(date)
+    if (Number.isNaN(parsed.getTime())) continue
+    if (!latest || parsed > latest) latest = parsed
+  }
+  return latest ? latest.toISOString().slice(0, 10) : null
 }

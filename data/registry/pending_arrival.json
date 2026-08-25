@@ -1,10 +1,15 @@
 {
-  "order_id": "ORD-7773",
+  "order_id": "ORD-1973",
   "items": [
     {
       "item_id": "FOODS_3_288_CA_3_validation",
       "weight": 32.5,
       "qty": 872
+    },
+    {
+      "item_id": "FOODS_3_288_CA_2_validation",
+      "weight": 26.8,
+      "qty": 791
     }
   ]
 }

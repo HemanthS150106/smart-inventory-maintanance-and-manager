@@ -7,6 +7,33 @@ import datetime
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.join(BASE_DIR, 'backend', 'services'))
 from svg_generator import generate
+
+def determine_level(weight):
+    try:
+        w = float(weight or 0)
+    except (TypeError, ValueError):
+        w = 0.0
+    if w <= 0:
+        print(f'WARNING: invalid weight {weight}, defaulting to L3')
+        return 'L3'
+    if w < 5:  return 'L5'
+    if w < 15: return 'L4'
+    if w < 30: return 'L3'
+    if w < 60: return 'L2'
+    return 'L1'
+
+def determine_zone(demand, size, weight):
+    try:
+        d = float(demand or 0)
+        w = float(weight or 0)
+    except (TypeError, ValueError):
+        d, w = 0.0, 0.0
+    sz = str(size or 'M').upper()
+    if w >= 60 or sz == 'XL': return 'C'
+    if d > 600:  return 'A'
+    if d >= 300: return 'B'
+    if d >= 100: return 'C'
+    return 'D'
 def get_demand_intensity(item_id, meta):
     # Retrieve demand from some context, or just default to medium
     # Real demand is in forecasts.csv, but for logic we can just use category 
@@ -71,19 +98,24 @@ def main():
         meta_item = meta.get(it_id, {})
         sz = meta_item.get('size', 'M')
         
-        if wt < 5.0: shelf = 'L5'
-        elif wt < 15.0: shelf = 'L4'
-        elif wt < 30.0: shelf = 'L3'
-        elif wt < 60.0: shelf = 'L2'
-        else: shelf = 'L1'
-            
-        target_zone = 'D'
-        if dmd > 600 and sz in ['S', 'M']: target_zone = 'A'
-        elif (300 <= dmd <= 600) or sz in ['M', 'L']: target_zone = 'B'
-        elif sz in ['L', 'XL'] or wt > 40: target_zone = 'C'
+        shelf = determine_level(wt)
+        target_zone = determine_zone(dmd, sz, wt)
         
         def find_slot(z, sh):
-            possible = [s for s in registry.values() if s.get('zone')==z and s.get('level')==sh and not s.get('occupied')]
+            possible = []
+            for slot_id, slot in registry.items():
+                slot_zone = slot.get('zone') or slot_id[0]
+                slot_level = slot.get('level') or slot_id.split('-')[-1]
+                occupied = slot.get('occupied', False)
+                cart_status = slot.get('cart_status', 'not_allocated')
+                
+                if (slot_zone == z and 
+                    slot_level == sh and 
+                    not occupied and 
+                    cart_status == 'not_allocated'):
+                    s = dict(slot)
+                    s['slot_id'] = slot_id
+                    possible.append(s)
             possible.sort(key=lambda x: (x.get('pair', 0), x['slot_id']))
             if possible: return possible[0]['slot_id']
             return None
@@ -103,6 +135,7 @@ def main():
             registry[assigned_slot]['demand'] = round(dmd, 1)
             registry[assigned_slot]['size'] = sz
             registry[assigned_slot]['batch_id'] = batch_id
+            registry[assigned_slot]['cart_status'] = 'slot_only'
             
             batch_allocs.append({
                 'Item ID': it_id,
